@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿# 🏠Roon For You
 
 ## 🏡Find Your Next Stay With RoomForU🏡
@@ -32,3 +33,7 @@ As of now, we are launching this website focusing on specific localities in Indo
 <a href="https://github.com/ramnivas369/Sanketik">
   <img src=" " />
 </a>
+=======
+# Sanketik
+Everyone can contribute from  team sanketik. 
+>>>>>>> 2fa8b87c15b6091139db5c30f395f581f51656c3
