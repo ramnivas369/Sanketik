@@ -22,7 +22,7 @@ body {
 /* -----navbar------------------ */
 nav {
     height: 60px;
-    background-color: #d8232a;
+    background-color: #4254b3;
     display: flex;
     justify-content: center;
     position: sticky;
@@ -40,7 +40,7 @@ nav {
     height: 40px;
     border-radius: 50px;
     border: none;
-    background-color: #d8232a;
+    background-color: #4254b3;
     color: white;
     margin-top: 10px;
     margin-right: 50px;
@@ -79,7 +79,7 @@ nav {
 .form-div {
     padding: 20px 30px 70px 40px;
     text-align: center;
-    box-shadow: 0px 2px 2px 3px #d8232a;
+    box-shadow: 0px 2px 2px 3px #4254b3;
     border-radius: 50px;
 }
 
@@ -88,7 +88,7 @@ nav {
     margin: 10px;
     top: 40px;
     font-size: 30px;
-    color: #d8232a;
+    color: #4254b3;
 }
 
 .sub-heading {
@@ -146,7 +146,7 @@ nav {
     padding-right: 23px;
     border: none;
     border-radius: 5px;
-    background-color: #d8232a;
+    background-color: #4254b3;
     color: white;
     margin-top: 30px;
     display: block;
@@ -217,7 +217,7 @@ input[type="checkbox"]:checked:after {
    .foot-icon{
     font-size: 30px;
     margin-left: 10px;
-    color: #d8232a;
+    color: #4254b3;
    }
    .foot-anchor{
     text-decoration: none;
@@ -230,7 +230,7 @@ input[type="checkbox"]:checked:after {
     margin-right: 35%;
 
    }
-   .tex-red{color:#d8232a ;}
+   .tex-red{color:#4254b3 ;}
    .con-foot{
     
      padding: 50px;
@@ -251,9 +251,25 @@ input[type="checkbox"]:checked:after {
 
     .form-div {
         text-align: center;
-        box-shadow: 0px 0px 2px 1px #d8232a;
+        box-shadow: 0px 0px 2px 1px #4254b3;
         border-radius: 50px;
         font-size: 15px;
 
     }
+}
+
+.selects {
+    background-color: #4254b3;
+}
+
+.redio-btn:checked{
+   color: #4254b3;
+}
+
+.btn-post{
+   background-color: #4254b3;
+}
+
+.btn-owner{
+   box-shadow: 0px 0px 2px 1px #4254b3;
 }

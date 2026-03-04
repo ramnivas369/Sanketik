@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Data Viewer - Room For U</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f6f6f6;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4254b3;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            background-color: #4254b3;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .json-data {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .refresh-btn {
+            background-color: #4254b3;
+            color: white;
+        }
+        .refresh-btn:hover {
+            background-color: #3445a2;
+        }
+        .clear-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        .clear-btn:hover {
+            background-color: #d32f2f;
+        }
+        .export-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .export-btn:hover {
+            background-color: #3e8e41;
+        }
+        .home-btn {
+            background-color: #2196F3;
+            color: white;
+        }
+        .home-btn:hover {
+            background-color: #0b7dda;
+        }
+        
+        /* Developer login styling */
+        .dev-login-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .dev-login-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dev-login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .dev-login-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .dev-login-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4254b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .dev-login-form button:hover {
+            background-color: #3445a2;
+        }
+        
+        .dev-login-form .error-message {
+            color: #f44336;
+            margin-bottom: 15px;
+            text-align: center;
+            display: none;
+        }
+        
+        .data-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Developer Login Form -->
+    <div id="devLoginContainer" class="dev-login-container">
+        <div class="dev-login-form">
+            <h2>Developer Access</h2>
+            <p style="text-align: center; margin-bottom: 20px;">This page is restricted to developers only.</p>
+            <div id="devLoginError" class="error-message"></div>
+            <input type="text" id="devUsername" placeholder="Developer Username" />
+            <input type="password" id="devPassword" placeholder="Developer Password" />
+            <button id="devLoginBtn">Access Data</button>
+        </div>
+    </div>
+
+    <!-- Data Viewer (hidden by default) -->
+    <div id="dataContainer" class="data-container">
+        <div class="container">
+            <h1>Room For U - Login Data Viewer</h1>
+            
+            <div class="section">
+                <h2>Current User</h2>
+                <div id="currentUser" class="json-data">
+                    {"name":"raj","phone":"9977364934","address":"15 vijaynagar","email":"rajchou56@gmail.com","timestamp":"2025-04-05T15:19:40.823Z"}
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>All Users</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Login Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <tr>
+                            <td>raj</td>
+                            <td>rajchou56@gmail.com</td>
+                            <td>9977364934</td>
+                            <td>15 vijaynagar</td>
+                            <td>4/5/2025, 8:49:40 PM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section">
+                <h2>Raw localStorage Data</h2>
+                <div id="rawData" class="json-data">
+roomForUCurrentUser: {"name":"raj","phone":"9977364934","address":"15 vijaynagar","email":"rajchou56@gmail.com","timestamp":"2025-04-05T15:19:40.823Z"}
+
+roomForUUsers: [{"name":"raj","phone":"9977364934","address":"15 vijaynagar","email":"rajchou56@gmail.com","timestamp":"2025-04-05T15:19:40.823Z"}]
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button id="refreshBtn" class="button refresh-btn">Refresh Data</button>
+                <button id="clearBtn" class="button clear-btn">Clear All Data</button>
+                <button id="exportBtn" class="button export-btn">Export Data as JSON</button>
+                <button id="homeBtn" class="button home-btn">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const devLoginContainer = document.getElementById('devLoginContainer');
+            const dataContainer = document.getElementById('dataContainer');
+            const devLoginBtn = document.getElementById('devLoginBtn');
+            const devLoginError = document.getElementById('devLoginError');
+            
+            // Developer credentials
+            const validUsername = 'dev';
+            const validPassword = 'roomforu2023';
+            
+            // Check if already authenticated
+            const isAuthenticated = sessionStorage.getItem('roomForUDevAuthenticated');
+            if (isAuthenticated === 'true') {
+                showDataViewer();
+            }
+            
+            // Developer login
+            devLoginBtn.addEventListener('click', function() {
+                const username = document.getElementById('devUsername').value.trim();
+                const password = document.getElementById('devPassword').value.trim();
+                
+                if (username === validUsername && password === validPassword) {
+                    // Save authentication status to session storage
+                    sessionStorage.setItem('roomForUDevAuthenticated', 'true');
+                    showDataViewer();
+                } else {
+                    devLoginError.textContent = 'Invalid credentials. Please try again.';
+                    devLoginError.style.display = 'block';
+                }
+            });
+            
+            function showDataViewer() {
+                devLoginContainer.style.display = 'none';
+                dataContainer.style.display = 'block';
+                loadData();
+            }
+            
+            // Load data from localStorage on page load
+            function loadData() {
+                // Get current user data
+                const currentUser = JSON.parse(localStorage.getItem('roomForUCurrentUser') || '{}');
+                document.getElementById('currentUser').textContent = JSON.stringify(currentUser, null, 2);
+                
+                // Get all users data
+                const users = JSON.parse(localStorage.getItem('roomForUUsers') || '[]');
+                const tableBody = document.getElementById('usersTableBody');
+                tableBody.innerHTML = '';
+                
+                users.forEach(user => {
+                    const row = document.createElement('tr');
+                    
+                    // Format timestamp
+                    const date = new Date(user.timestamp);
+                    const formattedDate = date.toLocaleString();
+                    
+                    row.innerHTML = `
+                        <td>${user.name || ''}</td>
+                        <td>${user.email || ''}</td>
+                        <td>${user.phone || ''}</td>
+                        <td>${user.address || ''}</td>
+                        <td>${formattedDate}</td>
+                    `;
+                    
+                    tableBody.appendChild(row);
+                });
+                
+                // Get raw data
+                let rawDataText = '';
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key && key.startsWith('roomForU')) {
+                        const value = localStorage.getItem(key);
+                        rawDataText += `${key}: ${value}\n\n`;
+                    }
+                }
+                
+                document.getElementById('rawData').textContent = rawDataText || 'No data found';
+            }
+            
+            // Set up event listeners for buttons
+            document.getElementById('refreshBtn').addEventListener('click', loadData);
+            document.getElementById('clearBtn').addEventListener('click', clearAllData);
+            document.getElementById('exportBtn').addEventListener('click', exportData);
+            document.getElementById('homeBtn').addEventListener('click', function() {
+                window.location.href = '../index.html';
+            });
+            
+            function clearAllData() {
+                if (confirm('Are you sure you want to clear all Room For U data?')) {
+                    for (let i = localStorage.length - 1; i >= 0; i--) {
+                        const key = localStorage.key(i);
+                        if (key && key.startsWith('roomForU')) {
+                            localStorage.removeItem(key);
+                        }
+                    }
+                    loadData();
+                    alert('All Room For U data has been cleared.');
+                }
+            }
+            
+            function exportData() {
+                const data = {};
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key && key.startsWith('roomForU')) {
+                        try {
+                            data[key] = JSON.parse(localStorage.getItem(key));
+                        } catch (e) {
+                            data[key] = localStorage.getItem(key);
+                        }
+                    }
+                }
+                
+                const dataStr = JSON.stringify(data, null, 2);
+                const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+                
+                const exportFileDefaultName = 'room_for_u_data.json';
+                
+                const linkElement = document.createElement('a');
+                linkElement.setAttribute('href', dataUri);
+                linkElement.setAttribute('download', exportFileDefaultName);
+                linkElement.click();
+            }
+            
+            // Press Enter to submit login form
+            document.getElementById('devPassword').addEventListener('keyup', function(event) {
+                if (event.key === 'Enter') {
+                    devLoginBtn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

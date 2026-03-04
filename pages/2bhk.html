@@ -15,7 +15,7 @@
 
       
     <nav>
-        <h1 class="brand-heading-1">RoomOnRent</h1>
+        <h1 class="brand-heading-1">RoomForU</h1>
  
         <div class="nav-items">
             <a href="/index.html"><button class="post-btn">Home</button></a>
@@ -33,7 +33,7 @@
         <div class="side-br-cont-main">
 
             <div class="side-bar">
-                <h1 class="brand-heading">RoomOnRent</h1>
+                <h1 class="brand-heading">RoomForU</h1>
                 <div class="inputBox"> <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" class="in-1" placeholder="Search your City....">
                 </div>
@@ -833,6 +833,50 @@
 
     </div>
 
+    <script src="../js/property-api.js"></script>
+    <script>
+        // Add search functionality to any search inputs on the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Find all search inputs on the page
+            const searchInputs = document.querySelectorAll('input[placeholder*="Search"], input[placeholder*="search"]');
+            
+            searchInputs.forEach(input => {
+                // Add event listener for Enter key
+                input.addEventListener('keypress', function(event) {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        const searchQuery = this.value.trim();
+                        if (searchQuery) {
+                            // Check if we have a property container on the page
+                            let propertyContainer = document.getElementById('property-container');
+                            
+                            // If not, create one
+                            if (!propertyContainer) {
+                                propertyContainer = document.createElement('div');
+                                propertyContainer.id = 'property-container';
+                                propertyContainer.style.display = 'flex';
+                                propertyContainer.style.flexWrap = 'wrap';
+                                propertyContainer.style.gap = '20px';
+                                propertyContainer.style.justifyContent = 'center';
+                                propertyContainer.style.margin = '30px auto';
+                                propertyContainer.style.maxWidth = '1200px';
+                                document.body.appendChild(propertyContainer);
+                            }
+                            
+                            // Show loading message
+                            propertyContainer.innerHTML = '<div style="text-align: center; width: 100%; padding: 20px;">Loading properties for ' + searchQuery + '...</div>';
+                            
+                            // Scroll to the container
+                            propertyContainer.scrollIntoView({ behavior: 'smooth' });
+                            
+                            // Fetch and display properties
+                            fetchMagicBricksProperties(searchQuery, 'rent');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -4,12 +4,98 @@
 <head>
     <title>Documentation Processing</title>
     <link rel="stylesheet" href="../css/documentaion.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://kit.fontawesome.com/61d1b80f50.js" crossorigin="anonymous"></script>
+    <style>
+        /* Multicolor Room For U Animation */
+        .multicolor-title {
+          display: inline-block;
+          font-weight: bold;
+          position: relative;
+        }
+        
+        .multicolor-title span:nth-child(1) {
+          color: #4254b3;
+          animation: color-rotate-1 3s linear infinite;
+        }
+        
+        .multicolor-title span:nth-child(2) {
+          color: #25a9e0;
+          animation: color-rotate-2 3s linear infinite;
+        }
+        
+        .multicolor-title span:nth-child(3) {
+          color: #8b44ad;
+          animation: color-rotate-3 3s linear infinite;
+        }
+        
+        @keyframes color-rotate-1 {
+          0% { color: #4254b3; }
+          33% { color: #25a9e0; }
+          66% { color: #8b44ad; }
+          100% { color: #4254b3; }
+        }
+        
+        @keyframes color-rotate-2 {
+          0% { color: #25a9e0; }
+          33% { color: #8b44ad; }
+          66% { color: #4254b3; }
+          100% { color: #25a9e0; }
+        }
+        
+        @keyframes color-rotate-3 {
+          0% { color: #8b44ad; }
+          33% { color: #4254b3; }
+          66% { color: #25a9e0; }
+          100% { color: #8b44ad; }
+        }
+        
+        .brand-heading-1 {
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .color-lired {
+          position: relative;
+          display: inline-block;
+          color: #8b44ad;
+          animation: color-change 4s linear infinite;
+        }
+        
+        @keyframes color-change {
+          0% { color: #4254b3; }
+          25% { color: #25a9e0; }
+          50% { color: #8b44ad; }
+          75% { color: #ff3988; }
+          100% { color: #4254b3; }
+        }
+        
+        /* Footer multicolor styling */
+        .tex-red {
+          background: linear-gradient(90deg, #4254b3, #25a9e0, #8b44ad, #ff3988);
+          background-size: 300% 100%;
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+          animation: gradient-shift 4s ease infinite;
+        }
+        
+        @keyframes gradient-shift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+    </style>
 </head>
 
 <body>
  <!-- ----------------navbar-------------- -->
  <nav>
-    <h1 class="brand-heading-1">RoomOnRent</h1>
+    <h1 class="brand-heading-1">
+        <span class="multicolor-title">
+            <span>Room</span> <span class="color-lired">For</span> <span>U</span>
+        </span>
+    </h1>
     <img src="../img/home.png" alt="" class="home-png">
     <div class="nav-items">
         <a href="/index.html"><button class="post-btn">Home</button></a>
@@ -43,6 +129,7 @@
                     <input type="tel" placeholder="Zip Code" class="zip-code input-type" />
                     <select id="state"><br /><br />
                         <option>State</option>
+                        <option>Madhya Pradesh</option>
                         <option>Goa</option>
                         <option>Gujarat</option>
                         <option>Maharastra</option>
@@ -85,19 +172,23 @@
 <div class="container-foot">
     <div class="container-foot1">
         <div class="con-foot">
-            <h1 class="heding1-t"> 🏠<span class="tex-red">Room On Rent</span></h1><br /> <br>
-            <span class="color-light">room on Rent is India's fastest growing Managed Home <br />
+            <h1 class="heding1-t animate__animated animate__fadeIn"> 🏠
+                <span class="multicolor-title">
+                    <span>Room</span> <span class="color-lired">For</span> <span>U</span>
+                </span>
+            </h1>
+            <span class="color-light">Sanketik is India's fastest growing Managed Home <br />
                 Rental Network' attempting to provide better rental <br />
                 solutions via design & technology.<br /><br />
-                We help find,books rental homes of choice across <br />
+                We help find, book rental homes of choice across <br />
                 Indian cities. We assist with move-in, provide home <br />
-                maintence service from cleaning, damages to rent <br />
+                maintenance services from cleaning, damages to rent <br />
                 payment & even move-out.<br /><br />
-                Whatever be your budget, Whatever you may call a <br />
-                home (a bed, a room of an entire house), we have<br />
+                Whatever be your budget, whatever you may call a <br />
+                home (a bed, a room, or an entire house), we have<br />
                 something for you!
             </span>
-        </div class="con-foot">
+        </div>
         <div class="con-foot">
             <h2 class="heding1-t">Rent On Room</h2><br>
             <a class="foot-anchor color-light" href="#">our service</a><br>
@@ -127,32 +218,35 @@
 
         <div class="con-foot">
             <h2 class="heding1-t"> Contact Us</h2><br />
-            <a class="foot-anchor color-light" href="tel:9373700515">Toll Free-9373700515</a><br />
+            <a class="foot-anchor color-light" href="tel:9981501289">Toll Free-9981501289</a><br />
 
 
-            <a class="foot-anchor color-light" href="mailto:abhijeetbk154@gmail.com">Email -
-                roomonrent@gmail.com</a><br /> <br><br>
+            <a class="foot-anchor color-light" href="agarwalpushpendra6@gmail.com">Email -
+                RoomForU@gmail.com</a><br /> <br><br>
 
             <h2 class="heding1-t "> Connect With us</h2><br /> <br><br>
 
-            <a href=" "><i class="fa-brands fa-facebook foot-icon"></i></a>
-            <a class="foot-anchor" href=" https://www.youtube.com/channel/UCbKy0fUfvXZlZzyaZ1c7OyQ"><i
+            <a href="https://wa.me/message/T3FRUSUBEB2BI1"><i 
+                class="fa-brands fa-whatsapp foot-icon"></i></a>
+            <a class="foot-anchor" href="youtube.com/channel/UCwptnxBgYblN77IrSgCiCLw"><i
                     class="fa-brands fa-youtube foot-icon"></i></a>
-            <a class="foot-anchor" href="https://www.twitter.com/abhijeetkokat "><i
-                    class="fa-brands fa-twitter foot-icon"></i></a>
-            <a class="foot-anchor" href="https://www.instagram.com/abhijeet_kokat_007/"><i
+            <a class="foot-anchor" href="https://x.com/ramnivas_Dangi?t=4WDxdajVl84oFeqAZ-FAuw&s=09"><i
+                    class="fa-brands fa-x-twitter foot-icon"></i></a>
+            <a class="foot-anchor" href="https://www.instagram.com/iam_ramnivas?utm_source=qr"><i
                     class="fa-brands fa-instagram foot-icon"></i></a>
-            <a class="foot-anchor"
-                href=" https://github.com/Abhijeetkokat007/Room-on-Rent-IGCP1-First-group-project"><i
+            <a class="foot-anchor" href="https://github.com/ramnivas369/Sanketik"><i
                     class="fa-brands fa-github foot-icon"></i></a>
-
 
         </div>
 
     </div>
     <div class="fotr-cont">
-        <span class="foot-tex color-light">©2023-2024 <span style="color: #d8232a;">Room-On-Rent</span> Gulab-Group
-            Technology Pvt. Ltd.</span>
+        <span class="foot-tex color-light">©2025-2026 
+            <span class="multicolor-title">
+                <span>Room</span> <span class="color-lired">For</span> <span>U</span>
+            </span> 
+            Sanketik Pvt. Ltd.
+        </span>
     </div>
 </div>
 

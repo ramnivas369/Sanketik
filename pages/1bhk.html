@@ -5,18 +5,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1BHK-Rooms</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.png">
     <link rel="stylesheet" href="./../css/1bhk.css">
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Handjet:wght@500&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/cbbc9ee5b0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        /* Multicolor Room For U Animation */
+        .multicolor-title {
+            display: inline-block;
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .multicolor-title span:nth-child(1) {
+            color: #4254b3;
+            animation: color-rotate-1 3s linear infinite;
+        }
+        
+        .multicolor-title span:nth-child(2) {
+            color: #25a9e0;
+            animation: color-rotate-2 3s linear infinite;
+        }
+        
+        .multicolor-title span:nth-child(3) {
+            color: #8b44ad;
+            animation: color-rotate-3 3s linear infinite;
+        }
+        
+        @keyframes color-rotate-1 {
+            0% { color: #4254b3; }
+            33% { color: #25a9e0; }
+            66% { color: #8b44ad; }
+            100% { color: #4254b3; }
+        }
+        
+        @keyframes color-rotate-2 {
+            0% { color: #25a9e0; }
+            33% { color: #8b44ad; }
+            66% { color: #4254b3; }
+            100% { color: #25a9e0; }
+        }
+        
+        @keyframes color-rotate-3 {
+            0% { color: #8b44ad; }
+            33% { color: #4254b3; }
+            66% { color: #25a9e0; }
+            100% { color: #8b44ad; }
+        }
+        
+        .brand-heading-1 {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .color-lired {
+            position: relative;
+            display: inline-block;
+            color: #8b44ad;
+            animation: color-change 4s linear infinite;
+        }
+        
+        @keyframes color-change {
+            0% { color: #4254b3; }
+            25% { color: #25a9e0; }
+            50% { color: #8b44ad; }
+            75% { color: #ff3988; }
+            100% { color: #4254b3; }
+        }
+        
+        /* Footer multicolor styling */
+        .tex-red {
+            background: linear-gradient(90deg, #4254b3, #25a9e0, #8b44ad, #ff3988);
+            background-size: 300% 100%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradient-shift 4s ease infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
 </head>
 
 <body>
 
     
     <nav>
-        <h1 class="brand-heading-1">RoomOnRent</h1>
- 
+        <h1 class="brand-heading-1 animate__animated animate__fadeIn">
+            <span class="multicolor-title">
+                <span>Room</span> <span class="color-lired">For</span> <span>U</span>
+            </span>
+        </h1>
+        <img src="../img/home.png" alt="" class="home-png">
         <div class="nav-items">
             <a href="/index.html"><button class="post-btn">Home</button></a>
 
@@ -33,7 +119,7 @@
         <div class="side-br-cont-main">
 
             <div class="side-bar">
-                <h1 class="brand-heading">RoomOnRent</h1>
+                <h1 class="brand-heading">RoomForU</h1>
                 <div class="inputBox"> <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" class="in-1" placeholder="Search your City....">
                 </div>
@@ -832,6 +918,83 @@
         </div>
 
     </div>
+
+    <div class="container-foot">
+        <div class="container-foot1">
+            <div class="con-foot">
+                <h1 class="heding1-t animate__animated animate__fadeIn"> 🏠
+                    <span class="multicolor-title">
+                        <span>Room</span> <span class="color-lired">For</span> <span>U</span>
+                    </span>
+                </h1>
+                <span class="color-light"><br />
+                    is India's fastest growing Managed Home <br />
+                    Rental Network' attempting to provide better rental <br />
+                    solutions via design & technology.<br /><br />
+                    We help find, book rental homes of choice across <br />
+                    Indian cities. We assist with move-in, provide home <br />
+                    maintenance services from cleaning, damages to rent <br />
+                    payment & even move-out.<br /><br />
+                    Whatever be your budget, whatever you may call a <br />
+                    home (a bed, a room, or an entire house), we have<br />
+                    something for you!
+                </span>
+            </div>
+        </div>
+        <div class="fotr-cont">
+            <span class="foot-tex color-light">©2025-2026 
+                <span class="multicolor-title">
+                    <span>Room</span> <span class="color-lired">For</span> <span>U</span>
+                </span> 
+                Sanketik Pvt. Ltd.
+            </span>
+        </div>
+    </div>
+
+    <script src="../js/property-api.js"></script>
+    <script>
+        // Add search functionality to any search inputs on the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Find all search inputs on the page
+            const searchInputs = document.querySelectorAll('input[placeholder*="Search"], input[placeholder*="search"]');
+            
+            searchInputs.forEach(input => {
+                // Add event listener for Enter key
+                input.addEventListener('keypress', function(event) {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        const searchQuery = this.value.trim();
+                        if (searchQuery) {
+                            // Check if we have a property container on the page
+                            let propertyContainer = document.getElementById('property-container');
+                            
+                            // If not, create one
+                            if (!propertyContainer) {
+                                propertyContainer = document.createElement('div');
+                                propertyContainer.id = 'property-container';
+                                propertyContainer.style.display = 'flex';
+                                propertyContainer.style.flexWrap = 'wrap';
+                                propertyContainer.style.gap = '20px';
+                                propertyContainer.style.justifyContent = 'center';
+                                propertyContainer.style.margin = '30px auto';
+                                propertyContainer.style.maxWidth = '1200px';
+                                document.body.appendChild(propertyContainer);
+                            }
+                            
+                            // Show loading message
+                            propertyContainer.innerHTML = '<div style="text-align: center; width: 100%; padding: 20px;">Loading properties for ' + searchQuery + '...</div>';
+                            
+                            // Scroll to the container
+                            propertyContainer.scrollIntoView({ behavior: 'smooth' });
+                            
+                            // Fetch and display properties
+                            fetchMagicBricksProperties(searchQuery, 'rent');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 

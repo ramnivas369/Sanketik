@@ -1,4 +1,7 @@
-
+body{
+    margin: 0;
+    padding: 0;
+}
 .main{
     margin-left: 100px;
     margin-right: 100px;
@@ -9,7 +12,7 @@
     display: flex;
     margin: 30px;
     justify-content: space-between;
-    border: #d8232a solid 1px;
+    border: #4254b3 solid 1px;
     box-shadow: 1px 4px 5px 1px rgb(156, 154, 154);
 }
 .news-main-div:hover{
@@ -23,11 +26,11 @@
 .home-img{
     height: 205px;
     width: 250px;
-    border: #d8232a;
+    border: #4254b3;
    
 }
 .heading-para{
-    color: #d8232a;
+    color: #4254b3;
    
 }
 .details{
@@ -37,7 +40,7 @@
     position: relative;
 }
 button{
-    background-color: #d8232a;
+    background-color: #4254b3;
     border: none;
     border-radius: 30px;
     color: white;
@@ -78,7 +81,7 @@ button:hover{
       .foot-icon{
        font-size: 30px;
        margin-left: 10px;
-       color: #d8232a;
+       color: #4254b3;
       }
       .foot-anchor{
        text-decoration: none;
@@ -90,10 +93,90 @@ button:hover{
          text-align: center;
    
       }
-      .tex-red{color:#d8232a ;}
+      .tex-red{color:#4254b3 ;}
       .con-foot{
        
          padding: 50px;
          
       }
+   
+.update-div{
+    width: 400px;
+    margin: 10px;
+    padding: 20px;
+    margin-top: 10px;
+    /* border-radius: 10px; */
+    padding-bottom: 30px;
+    border: #4254b3 solid 1px;
+}
+.update-div:hover{
+    box-shadow: 0 2px 10px 0 rgb(145, 144, 144);
+    background-color: #efefef;
+    cursor: pointer;
+    border: #4254b3;
+
+}
+.update-anc{
+    text-decoration: none;
+    color: #4254b3;
+    font-weight: bold;
+    font-size: 25px;
+}
+/* ------------------------------navbar-------------------------------- */
+
+.btn-login{
+    background-color: #4254b3;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 30px;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: none;
+    margin-bottom: 20px;   
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+}
+.heald-upate{
+    text-align: center;
+}
+/* --------------footer------------ */
+/*footer*/
+.container-foot1{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    background-color: #f5f5f5;
+    padding-top: 80px;
+    padding-bottom: 80px;
+   }
+   .container-foot{background-color: #f5f5f5;
+  padding-bottom: 50px;}
+   .foot-icon{
+    font-size: 30px;
+    margin-left: 10px;
+    color: #4254b3;
+   }
+   .foot-anchor{
+    text-decoration: none;
+   }
+   .color-light{
+    color: #666565;
+   }
+   .fotr-cont{
+      text-align: center;
+
+   }
+   .tex-red{color:#4254b3 ;}
+   .con-foot{
+    
+      padding: 50px;
+      
+   }
+   .update-img{
+    width: 400px;
+   }
    

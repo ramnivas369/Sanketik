@@ -19,7 +19,7 @@
 
 nav {
     height: 60px;
-    background-color: #d8232a;
+    background-color: #4254b3;
     display: flex;
     justify-content: center;
     position: sticky;
@@ -36,7 +36,7 @@ nav {
     height: 40px;
     border-radius: 50px;
     border: none;
-    background-color: #d8232a;
+    background-color: #4254b3;
     color: white;
     margin-top: 10px;
     margin-right: 50px;
@@ -121,13 +121,13 @@ nav {
 }
 
 .btn-login {
-    background-color: #d8232a;
+    background-color: #4254b3;
     color: white;
     width: 180px;
 }
-.btn-login:hover{color: #d8232a;
+.btn-login:hover{color: #4254b3;
 background-color: white;
-border: 2px solid #d8232a;}
+border: 2px solid #4254b3;}
 
 .image-log-1 {
     height: 20px;
@@ -164,7 +164,7 @@ border: 2px solid #d8232a;}
    .foot-icon{
     font-size: 30px;
     margin-left: 10px;
-    color: #d8232a;
+    color: #4254b3;
    }
    .foot-anchor{
     text-decoration: none;
@@ -176,9 +176,13 @@ border: 2px solid #d8232a;}
    text-align: center;
 
    }
-   .tex-red{color:#d8232a ;}
+   .tex-red{color:#4254b3 ;}
    .con-foot{
     
      padding: 50px;
 
    }
+
+.selects {
+    background-color: #4254b3;
+}

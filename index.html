@@ -4,20 +4,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoomOnRent</title>
+    <title>Room For U</title>
     <script src="https://kit.fontawesome.com/61d1b80f50.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/index.css" />
+    <style>
+        .header-div {
+        display: flex
+        ;
+        height: 80px;
+        }
+        /* Enhanced Multicolor Room For U Animation */
+        .multicolor-title {
+            display: inline-block;
+            font-weight: bold;
+            position: relative;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        
+        .multicolor-title span:nth-child(1) {
+            color: #4254b3;
+            animation: color-rotate-1 3s linear infinite;
+            filter: drop-shadow(0 0 2px rgba(66, 84, 179, 0.7));
+        }
+        
+        .multicolor-title span:nth-child(2) {
+            color: #25a9e0;
+            animation: color-rotate-2 3s linear infinite;
+            filter: drop-shadow(0 0 2px rgba(37, 169, 224, 0.7));
+        }
+        
+        .multicolor-title span:nth-child(3) {
+            color: #8b44ad;
+            animation: color-rotate-3 3s linear infinite;
+            filter: drop-shadow(0 0 2px rgba(139, 68, 173, 0.7));
+        }
+        
+        @keyframes color-rotate-1 {
+            0% { color: #4254b3; filter: drop-shadow(0 0 3px rgba(66, 84, 179, 0.7)); }
+            33% { color: #25a9e0; filter: drop-shadow(0 0 3px rgba(37, 169, 224, 0.7)); }
+            66% { color: #8b44ad; filter: drop-shadow(0 0 3px rgba(139, 68, 173, 0.7)); }
+            100% { color: #4254b3; filter: drop-shadow(0 0 3px rgba(66, 84, 179, 0.7)); }
+        }
+        
+        @keyframes color-rotate-2 {
+            0% { color: #25a9e0; filter: drop-shadow(0 0 3px rgba(37, 169, 224, 0.7)); }
+            33% { color: #8b44ad; filter: drop-shadow(0 0 3px rgba(139, 68, 173, 0.7)); }
+            66% { color: #4254b3; filter: drop-shadow(0 0 3px rgba(66, 84, 179, 0.7)); }
+            100% { color: #25a9e0; filter: drop-shadow(0 0 3px rgba(37, 169, 224, 0.7)); }
+        }
+        
+        @keyframes color-rotate-3 {
+            0% { color: #8b44ad; filter: drop-shadow(0 0 3px rgba(139, 68, 173, 0.7)); }
+            33% { color: #4254b3; filter: drop-shadow(0 0 3px rgba(66, 84, 179, 0.7)); }
+            66% { color: #25a9e0; filter: drop-shadow(0 0 3px rgba(37, 169, 224, 0.7)); }
+            100% { color: #8b44ad; filter: drop-shadow(0 0 3px rgba(139, 68, 173, 0.7)); }
+        }
+        
+        .color-lired {
+            position: relative;
+            display: inline-block;
+            color: #8b44ad;
+            animation: color-change 4s linear infinite;
+            filter: drop-shadow(0 0 3px rgba(139, 68, 173, 0.6));
+        }
+        
+        @keyframes color-change {
+            0% { color: #4254b3; filter: drop-shadow(0 0 3px rgba(66, 84, 179, 0.6)); }
+            25% { color: #25a9e0; filter: drop-shadow(0 0 3px rgba(37, 169, 224, 0.6)); }
+            50% { color: #8b44ad; filter: drop-shadow(0 0 3px rgba(139, 68, 173, 0.6)); }
+            75% { color: #ff3988; filter: drop-shadow(0 0 3px rgba(255, 57, 136, 0.6)); }
+            100% { color: #4254b3; filter: drop-shadow(0 0 3px rgba(66, 84, 179, 0.6)); }
+        }
+        
+        /* Enhanced Footer multicolor styling */
+        .tex-red {
+            background: linear-gradient(90deg, #4254b3, #25a9e0, #8b44ad, #ff3988);
+            background-size: 300% 100%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradient-shift 4s ease infinite;
+            filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; filter: drop-shadow(0 0 3px rgba(66, 84, 179, 0.6)); }
+            50% { background-position: 100% 50%; filter: drop-shadow(0 0 3px rgba(139, 68, 173, 0.6)); }
+            100% { background-position: 0% 50%; filter: drop-shadow(0 0 3px rgba(66, 84, 179, 0.6)); }
+        }
+
+        /* Improved Footer Styles */
+        .footer {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 70px 0 20px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #4254b3, #25a9e0, #8b44ad);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo h2 {
+            color: #fff;
+            font-size: 28px;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-logo h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #4254b3, #8b44ad);
+        }
+
+        .footer-logo p {
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: linear-gradient(135deg, #4254b3, #8b44ad);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-links h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: linear-gradient(90deg, #4254b3, #8b44ad);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+        }
+
+        .footer-links ul li a::before {
+            content: '→';
+            position: absolute;
+            left: -18px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: #fff;
+            transform: translateX(18px);
+        }
+
+        .footer-links ul li a:hover::before {
+            opacity: 1;
+        }
+
+        .footer-contact p {
+            color: #ccc;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact p i {
+            margin-right: 10px;
+            min-width: 20px;
+            color: #25a9e0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .footer-bottom a {
+            color: #25a9e0;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .social-icons {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Added styling for the converted buttons */
+        a.btn-search {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        
+        a.update-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <!-- start navbar -->
 
     <!-- -----------header div------------------ -->
     <div class="header-div">
-        <h1 class="brand-heading">RoomOnRent</h1>
-        <span class="btns">
+        <h1 class="brand-heading animate__animated animate__fadeIn">
+            <span class="multicolor-title">
+                <span>Room</span> <span class="color-lired">For</span> <span>U</span>
+            </span>
+        </h1>
+        <span class="btns animate__animated animate__fadeIn">
             <a href="./pages/about.html" class="login-btn"><span class="user"><b>About</b></span></a>
             <a href="./pages/service.html" class="login-btn"><span class="user"><b>Services</b></span></a>
-            <a href="./pages/userlogin.html" class="login-btn"><span class="user"><b>User Login</b></span></a>
+            <a href="../search/index.html" class="login-btn"><span class="user"><b>Search Your City</b></span></a>
+            <span id="loginLogoutBtn">
+                <a href="./pages/userlogin.html" class="login-btn"><span class="user"><b>User Login</b></span></a>
+            </span>
             <a href="./pages/post_property.html" class="login-btn"><span class="user"><b>Owner Login</b></span>
             </a></span>
     </div>
@@ -108,195 +382,238 @@
             </select>
         </div>
     </nav>
-    <div class="div-poster">
-        <h1 class="hel-1">Commercial property for Rale & Rent</h1>
-        <div class="inputBox">
-            <input type="text" class="in-1" placeholder="Search your City ">
-            <button class="btn-search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                Search
-            </button>
-
-        </div>
-        <div>
-            <div class="header-btn">
-                <a href="./pages/post_property.html"><button class="update-btn"><span class="post-text">
-                    <i class="fa-solid fa-signs-post"></i>  Post
-                            Property</span></button></a>
-                <a href="./pages/maintanance.html"><button class="update-btn"><span class="post-text"> <i class="fa-solid fa-phone"></i> Call for
-                            Maintanance</span></button></a>
-                <a href="./pages/updates.html"><button class="update-btn"><span class="post-text"> <i class="fa-solid fa-magnifying-glass"></i> Explore Letest
-                            Updates</span></button></a>
-
+    <div style="width: full; height: 400px; background-color: darkblue;" class="category-container">
+            <!-- <img style="justify-content: center ; position: relative; width: 100pc; height: 24pc; z-index: -10;" src="https://www.decorpot.com/images/blogimage1361284108interior-designs-for-master-bedroom.jpg"/> -->
+        
+        <div class="div-poster">
+            
+            <h1 class="hel-1">Commercial property for Rent & Sale</h1>
+            <div class="inputBox">
+                <input type="text" id="citySearch" class="in-1" placeholder="Search your City ">
+                <a href="javascript:void(0);" onclick="handleCitySearch();" class="btn-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </a>
+            </div>
+            <div>
+                <div class="header-btn">
+                    <a href="./pages/post_property.html" class="update-btn"><span class="post-text">
+                        <i class="fa-solid fa-signs-post"></i>  Post
+                                Property</span></a>
+                    <a href="./pages/maintanance.html" class="update-btn"><span class="post-text"> <i class="fa-solid fa-phone"></i> Call for
+                                Maintanance</span></a>
+                    <a href="./pages/updates.html" class="update-btn"><span class="post-text"> <i class="fa-solid fa-magnifying-glass"></i> Explore Letest
+                                Updates</span></a>
+                </div>
+            </div>
+            <div id="searchResults" style="display: none; background-color: white; border-radius: 8px; padding: 20px; margin-top: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h2 id="resultTitle" style="color: #4254b3; margin-bottom: 15px;"></h2>
+                <div id="resultStats" style="display: flex; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap;">
+                    <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 5px; min-width: 160px; text-align: center;">
+                        <h3 style="margin: 0; color: #333;">Single Rooms</h3>
+                        <p id="singleRooms" style="font-size: 24px; font-weight: bold; margin: 10px 0; color: #4254b3;">0</p>
+                    </div>
+                    <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 5px; min-width: 160px; text-align: center;">
+                        <h3 style="margin: 0; color: #333;">1RK</h3>
+                        <p id="oneRK" style="font-size: 24px; font-weight: bold; margin: 10px 0; color: #4254b3;">0</p>
+                    </div>
+                    <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 5px; min-width: 160px; text-align: center;">
+                        <h3 style="margin: 0; color: #333;">1BHK</h3>
+                        <p id="oneBHK" style="font-size: 24px; font-weight: bold; margin: 10px 0; color: #4254b3;">0</p>
+                    </div>
+                    <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 5px; min-width: 160px; text-align: center;">
+                        <h3 style="margin: 0; color: #333;">2BHK</h3>
+                        <p id="twoBHK" style="font-size: 24px; font-weight: bold; margin: 10px 0; color: #4254b3;">0</p>
+                    </div>
+                    <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 5px; min-width: 160px; text-align: center;">
+                        <h3 style="margin: 0; color: #333;">3BHK</h3>
+                        <p id="threeBHK" style="font-size: 24px; font-weight: bold; margin: 10px 0; color: #4254b3;">0</p>
+                    </div>
+                    <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 5px; min-width: 160px; text-align: center;">
+                        <h3 style="margin: 0; color: #333;">Total</h3>
+                        <p id="totalRooms" style="font-size: 24px; font-weight: bold; margin: 10px 0; color: #4254b3;">0</p>
+                    </div>
+                </div>
+                <div id="popularLocalities" style="margin-top: 25px;">
+                    <h3 style="color: #333; margin-bottom: 15px;">Popular Localities</h3>
+                    <div id="localities" style="display: flex; flex-wrap: wrap;"></div>
+                </div>
+                <div style="margin-top: 20px; text-align: center;">
+                    <a href="./pages/singlerooms.html" style="display: inline-block; background: #4254b3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin: 5px;">View Single Rooms</a>
+                    <a href="./pages/1rk.html" style="display: inline-block; background: #4254b3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin: 5px;">View 1RK</a>
+                    <a href="./pages/1bhk.html" style="display: inline-block; background: #4254b3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin: 5px;">View 1BHK</a>
+                    <a href="./pages/2bhk.html" style="display: inline-block; background: #4254b3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin: 5px;">View 2BHK</a>
+                    <a href="./pages/3bhk.html" style="display: inline-block; background: #4254b3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin: 5px;">View 3BHK</a>
+                </div>
+                <div id="property-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;"></div>
             </div>
 
         </div>
     </div>
-    <div class="category-container"></div>
+    <div class="remove-when-search">
+        <!-- rooms card -->
+        <h1 class="heald-card">Find Your Rooms </h1>
+        <div class="d-flex">
+            <div class="rk1-div">
+                <img class="rk1-img" src="./img/index-page-img/singleroom.avif" /><br>
+                <div class="rk1-divsub">
+                    <span class="rk1-span"><b>Single Rooms</b></span> <br> <br>
+                    <span class="color-light"> 100+ 1RK Rooms</span> <br>
+                    <span><span class="color-light">starting</span> ₹ 3000 - 5000 </span><br><br>
+                    <a class="rk1-anchor color-lired" href="./pages/singlerooms.html">SHOW MORE</a> <br>
+                </div>
+            </div>
 
-    <!-- rooms card -->
-    <h1 class="heald-card">Find Your Rooms </h1>
-    <div class="d-flex">
-        <div class="rk1-div">
-            <img class="rk1-img" src="./img/index-page-img/singleroom.avif" /><br>
-            <div class="rk1-divsub">
-                <span class="rk1-span"><b>Single Rooms</b></span> <br> <br>
-                <span class="color-light"> 100+ 1RK Rooms</span> <br>
-                <span><span class="color-light">starting</span> ₹ 3000 - 5000 </span><br><br>
-                <a class="rk1-anchor color-lired" href="./pages/singlerooms.html">SHOW MORE</a> <br>
+            <div class="rk1-div">
+                <img class="rk1-img" src="./img/index-page-img/1RKroom.avif" /><br>
+                <div class="rk1-divsub">
+                    <span class="rk1-span"><b>1 BHK Rooms</b></span> <br> <br>
+                    <span class="color-light"> 100+ 1BHK Rooms</span> <br>
+                    <span><span class="color-light">starting</span> ₹ 5000 - 7000 </span><br><br>
+                    <a class="rk1-anchor color-lired" href="./pages/1bhk.html">SHOW MORE</a> <br>
+                </div>
+            </div>
+
+            <div class="rk1-div">
+                <img class="rk1-img" src="./img/index-page-img/1bhkroom.avif" /><br>
+                <div class="rk1-divsub">
+                    <span class="rk1-span"><b>2 BHK Rooms</b></span> <br> <br>
+                    <span class="color-light"> 100+ 1RK Rooms</span> <br>
+                    <span><span class="color-light">starting</span> ₹ 7000 - 10000 </span><br><br>
+                    <a class="rk1-anchor color-lired" href="./pages/2bhk.html">SHOW MORE</a> <br>
+                </div>
+            </div>
+
+            <div class="rk1-div">
+                <img class="rk1-img" src="./img/index-page-img/2bhkroom.avif" /><br>
+                <div class="rk1-divsub">
+                    <span class="rk1-span"><b>3 BHK Rooms</b></span> <br> <br>
+                    <span class="color-light"> 100+ 1RK Rooms</span> <br>
+                    <span><span class="color-light">starting</span> ₹ 10000 - 13000 </span><br><br>
+                    <a class="rk1-anchor color-lired" href="./pages/3bhk.html">SHOW MORE</a> <br>
+                </div>
             </div>
         </div>
 
-        <div class="rk1-div">
-            <img class="rk1-img" src="./img/index-page-img/1RKroom.avif" /><br>
-            <div class="rk1-divsub">
-                <span class="rk1-span"><b>1 BHK Rooms</b></span> <br> <br>
-                <span class="color-light"> 100+ 1BHK Rooms</span> <br>
-                <span><span class="color-light">starting</span> ₹ 5000 - 7000 </span><br><br>
-                <a class="rk1-anchor color-lired" href="./pages/1bhk.html">SHOW MORE</a> <br>
+        <!-- choose type of owner usre -->
+        <div class="d-flex choose-maindiv1">
+            <div class="choose-maindiv mt-100">
+                <img src="./img/index-page-img/homeimg.webp" /> <br><br>
+                <h2>Properties Posted by</h2>
             </div>
-        </div>
-
-        <div class="rk1-div">
-            <img class="rk1-img" src="./img/index-page-img/1bhkroom.avif" /><br>
-            <div class="rk1-divsub">
-                <span class="rk1-span"><b>2 BHK Rooms</b></span> <br> <br>
-                <span class="color-light"> 100+ 1RK Rooms</span> <br>
-                <span><span class="color-light">starting</span> ₹ 7000 - 10000 </span><br><br>
-                <a class="rk1-anchor color-lired" href="./pages/2bhk.html">SHOW MORE</a> <br>
-            </div>
-        </div>
-
-        <div class="rk1-div">
-            <img class="rk1-img" src="./img/index-page-img/2bhkroom.avif" /><br>
-            <div class="rk1-divsub">
-                <span class="rk1-span"><b>3 BHK Rooms</b></span> <br> <br>
-                <span class="color-light"> 100+ 1RK Rooms</span> <br>
-                <span><span class="color-light">starting</span> ₹ 10000 - 13000 </span><br><br>
-                <a class="rk1-anchor color-lired" href="./pages/3bhk.html">SHOW MORE</a> <br>
-            </div>
-        </div>
-    </div>
-
-    <!-- choose type of owner usre -->
-    <div class="d-flex choose-maindiv1">
-        <div class="choose-maindiv mt-100">
-            <img src="./img/index-page-img/homeimg.webp" /> <br><br>
-            <h2>Properties Poster by</h2>
-        </div>
-        <div class="choose-maindiv choos-bg">
-            <h2>Choose type of User</h2> <br><br>
-            <img class="owner-img" src="./img/index-page-img/owner.png" />
-            <span class="mt-20">Owner <a class="choos-acker" href="./pages/post_property.html "> &#8594; </a>
+            <div class="choose-maindiv choos-bg">
+                <h2>Choose type of User</h2> <br><br>
+                <img class="owner-img" src="./img/index-page-img/owner.png" />
+                <span class="mt-20">Owner <a class="choos-acker" href="./pages/post_property.html "> &#8594; </a>
+                    <br><br></span>
+                <img class="owner-img" src="./img/index-page-img/programmer.png" />
+                <span class="mt-20"></span> User <a class="choos-acker ml-220" href="./pages/userlogin.html"> &#8594; </a>
                 <br><br></span>
-            <img class="owner-img" src="./img/index-page-img/programmer.png" />
-            <span class="mt-20"></span> User <a class="choos-acker ml-220" href="./pages/userlogin.html"> &#8594; </a>
-            <br><br></span>
-        </div>
-    </div>
-
-    <!--curated rental collection-->
-    <h1 class="heading-2 heading-3 tex-light">Curated rental collections</h1>
-    <div class="ta-center">
-
-        <div class="d-flex">
-
-            <div class="rent-collection">
-                <a class="forfamily-tex " href="./pages/2bhk.html">For Family</a><br />
-                <span class="ml-30">180+ Properties</span>
-            </div>
-
-            <div class="rent-collection bg-1">
-                <a class="forfamily-tex" href="./pages/singlerooms.html">For Single Men</a><br />
-                <span class="ml-30">210+ Properties</span>
             </div>
         </div>
 
-        <div class="d-flex">
-            <div class="rent-collection bg-2">
-                <a class="forfamily-tex" href="./pages/singlerooms.html">For Single Women</a><br />
-                <span class="ml-30">150+ Properties</span>
+        <!--curated rental collection-->
+        <h1 class="heading-2 heading-3 tex-light">Curated rental collections</h1>
+        <div class="ta-center">
+
+            <div class="d-flex">
+
+                <div class="rent-collection">
+                    <a class="forfamily-tex " href="./pages/2bhk.html">For Family</a><br />
+                    <span class="ml-30">180+ Properties</span>
+                </div>
+
+                <div class="rent-collection bg-1">
+                    <a class="forfamily-tex" href="./pages/singlerooms.html">For Single Men</a><br />
+                    <span class="ml-30">210+ Properties</span>
+                </div>
             </div>
 
-            <div class="rent-collection bg-3">
-                <a class="forfamily-tex" href="./pages/1bhk.html">For Tenants With Company Lease</a><br />
-                <span class="ml-30">60+ Properties</span>
+            <div class="d-flex">
+                <div class="rent-collection bg-2">
+                    <a class="forfamily-tex" href="./pages/singlerooms.html">For Single Women</a><br />
+                    <span class="ml-30">150+ Properties</span>
+                </div>
+
+                <div class="rent-collection bg-3">
+                    <a class="forfamily-tex" href="./pages/1bhk.html">For Tenants With Company Lease</a><br />
+                    <span class="ml-30">60+ Properties</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- poster2 -->
+        <div class="d-flex poster2-main  ">
+
+
+            <div class="poster-subdiv">
+                <h1 class=" tex-light mt-60 "> List your Co-living space with RoomForU</h1> <br> <br>
+                <span>Convert your vacant space into revenue generating Asset. <br>
+                    Get the space listed and obtain visibility from lakhs of <br>
+                    users who are looking for a space in Top Cities of India.
+                </span> <br><br><br>
+                <button class="btn-listyouspace">List Your Space</button>
+            </div>
+            <div><img class="misco-img" src="./img/index-page-img/Miscommunication-rafiki.png" /></div>
+        </div>
+
+        <!-- apparment villa and more -->
+        <h1 class="heald-card mt-60">Aparments, Villas and more</h1>
+        <div class="scroll-container">
+            <div class="div-apar">
+                <div class="apar-span"><a class="apar-anchor" href=" "><b>Residential <br>Apartment</b></a></div>
+            </div>
+
+            <div class="div-apar bg-vill">
+                <div class="apar-span"><a class="apar-anchor" href=" "><b>Independent<br>House/Villa</b></a></div>
+            </div>
+
+            <div class="div-apar bg-builder">
+                <div class="apar-span"><a class="apar-anchor" href=" "><b>Independent <br>Builder Floor</b></a></div>
+            </div>
+
+            <div class="div-apar bg-studio">
+                <div class="apar-span"><a class="apar-anchor" href=" "><b> 1 RK/ Studio <br>Apartment</b></a></div>
+            </div>
+
+            <div class="div-apar bg-farmhouse">
+                <div class="apar-span"><a class="apar-anchor" href=" "><b>Farm House <br>.</b></a></div>
+            </div>
+
+            <div class="div-apar bg-service">
+                <div class="apar-span"><a class="apar-anchor" href=" "><b>Serviced <br>Apartments</b></a></div>
+            </div>
+
+        </div>
+
+        <!-- home by furnished -->
+        <h1 class="heading-3 tex-light mt-60">Homes by Furnishing</h1>
+
+        <div class=" d-flex">
+            <div class="furni-div">
+                <img class="furnished-img" src="./img/index-page-img/furnish.webp"><br>
+                <a class="firni-anchor" href="./pages/1bhk.html">Furnished</a>
+            </div>
+
+            <div class="furni-div">
+                <img class="furnished-img" src="./img/index-page-img/semifurnish.webp"><br>
+                <a class="firni-anchor" href="./pages/2bhk.html">Semifurnished</a>
+            </div>
+
+            <div class="furni-div">
+                <img class="furnished-img" src="./img/index-page-img/unfurnish.webp"><br>
+                <a class="firni-anchor" href="./pages/3bhk.html">Unfurnished</a>
             </div>
         </div>
-
-    </div>
-
-    <!-- poster2 -->
-    <div class="d-flex poster2-main  ">
-
-
-        <div class="poster-subdiv">
-            <h1 class=" tex-light mt-60 "> List your Co-living space with RoomOnRent</h1> <br> <br>
-            <span>Convert your vacant space into revenue generating Asset. <br>
-                Get the space listed and obtain visibility from lakhs of <br>
-                users who are looking for a space in Top Cities of India.
-            </span> <br><br><br>
-            <button class="btn-listyouspace">List Your Space</button>
-        </div>
-        <div><img class="misco-img" src="./img/index-page-img/Miscommunication-rafiki.png" /></div>
-    </div>
-
-    <!-- apparment villa and more -->
-    <h1 class="heald-card mt-60">Aparments, Villas and more</h1>
-    <div class="scroll-container">
-        <div class="div-apar">
-            <div class="apar-span"><a class="apar-anchor" href=" "><b>Residential <br>Apartment</b></a></div>
-        </div>
-
-        <div class="div-apar bg-vill">
-            <div class="apar-span"><a class="apar-anchor" href=" "><b>Independent<br>House/Villa</b></a></div>
-        </div>
-
-        <div class="div-apar bg-builder">
-            <div class="apar-span"><a class="apar-anchor" href=" "><b>Independent <br>Builder Floor</b></a></div>
-        </div>
-
-        <div class="div-apar bg-studio">
-            <div class="apar-span"><a class="apar-anchor" href=" "><b> 1 RK/ Studio <br>Apartment</b></a></div>
-        </div>
-
-        <div class="div-apar bg-farmhouse">
-            <div class="apar-span"><a class="apar-anchor" href=" "><b>Farm House <br>.</b></a></div>
-        </div>
-
-        <div class="div-apar bg-service">
-            <div class="apar-span"><a class="apar-anchor" href=" "><b>Serviced <br>Apartments</b></a></div>
-        </div>
-
-    </div>
-
-    <!-- home by furnished -->
-    <h1 class="heading-3 tex-light mt-60">Homes by Furnishing</h1>
-
-    <div class=" d-flex">
-        <div class="furni-div">
-            <img class="furnished-img" src="./img/index-page-img/furnish.webp"><br>
-            <a class="firni-anchor" href="./pages/1bhk.html">Furnished</a>
-        </div>
-
-        <div class="furni-div">
-            <img class="furnished-img" src="./img/index-page-img/semifurnish.webp"><br>
-            <a class="firni-anchor" href="./pages/2bhk.html">Semifurnished</a>
-        </div>
-
-        <div class="furni-div">
-            <img class="furnished-img" src="./img/index-page-img/unfurnish.webp"><br>
-            <a class="firni-anchor" href="./pages/3bhk.html">Unurnished</a>
-        </div>
-    </div>
     <!-- posterin -->
     <div class="d-flex poster-main">
         <div>
             <img class="poster1-img" src="./img/index-page-img/poster1.png" />
         </div>
         <div class="findmyroom-tex">
-            <h1 class="heading-3 tex-light">Why use RoomOnRent?</h1> <br> <br>
-            <span class="poster-tex color-light"> <span class="color-lired">RoomOnRent</span> is a one-stop destination
+            <h1 class="heading-3 tex-light">Why use RoomForU?</h1> <br> <br>
+            <span class="poster-tex color-light"> <span class="color-lired">RoomForU</span> is a one-stop destination
                 for anyone looking out for roommates, flatmates, co-living spaces or PGs. We understand that finding the
                 right living situation can be a challenge, which is why we make the process easy and stress-free.
                 Whether you're a student searching for a roommate or a young professional seeking a flatmate, our
@@ -305,13 +622,13 @@
 
                 Our platform allows you to browse through a wide range of listings for co-living spaces, PGs, and flats,
                 and find the perfect match for your lifestyle and preferences. So, why wait? Start your search today and
-                find your ideal living situation with <span class="color-lired">RoomOnRent</span>!</span>
+                find your ideal living situation with <span class="color-lired">RoomForU</span>!</span>
         </div>
     </div>
 
 
-    <!-- why use room on rent -->
-    <h1 class=" heading-3 tex-light mt-60">Why Use RoomOnRent</h1><br><br>
+    <!-- why use Room For U -->
+    <h1 class=" heading-3 tex-light mt-60">Why Use RoomForU</h1><br><br>
     <div class="d-flex-cen">
 
         <div class="div-nobrocker">
@@ -349,8 +666,8 @@
             <div class="box-1">
                 <div class="div-1">
                     <div class="flex-1">
-                        <div> <img class="img-man " src="./img/index-page-img/levic.jpg" /></div>
-                        <div class="flex-2"> <span class="h4-tag">Lewis Daniels </span> <br />
+                        <div> <img class="img-man " src="./img/index-page-img/Prince.png" /></div>
+                        <div class="flex-2"> <span class="h4-tag">Prince </span> <br />
                             <span class="tex-span span2">
                                 <i class="fa-sharp fa-solid fa-star col-yello"></i>
                                 <i class="fa-sharp fa-solid fa-star col-yello"></i>
@@ -407,7 +724,7 @@
                     </div>
                     <h3 class="heading">Found Great Place to Stay via NoBroker</h3>
                     <span class="tex-span1">
-                        "Room On Rent provides a great place to stay with safe <br />
+                        "Room For U provides a great place to stay with safe <br />
                         environment, it they show you something about property <br />that is always same as it No fake
                         pictures"</span> <br /> <br />
                 </div>
@@ -438,7 +755,7 @@
             <div class="box-1">
                 <div class="div-1">
                     <div class="flex-1">
-                        <div> <img class="img-man " src="./img/index-page-img/levic.jpg" /></div>
+                        <div> <img class="img-man " src="./img/index-page-img/Nikhil.png" /></div>
                         <div class="flex-2"> <span class="h4-tag">Anoop Nair </span> <br />
                             <span class="tex-span span2">
                                 <i class="fa-sharp fa-solid fa-star col-yello"></i>
@@ -462,8 +779,8 @@
 
                 <div class="div-1">
                     <div class="flex-1">
-                        <div> <img class="img-man " src="./img/index-page-img/thisha.jpg" /></div>
-                        <div class="flex-2"> <span class="h4-tag">Tiasha </span> <br />
+                        <div> <img class="img-man " src="./img/index-page-img/Ranu.png" /></div>
+                        <div class="flex-2"> <span class="h4-tag">Ranu </span> <br />
                             <span class="tex-span span2">
                                 <i class="fa-sharp fa-solid fa-star col-yello"></i>
                                 <i class="fa-sharp fa-solid fa-star col-yello"></i>
@@ -476,48 +793,41 @@
                     <h3 class="heading">Appreciate Positive and quick responses <br>
                         from RM</h3>
                     <span class="tex-span1">
-                        "RMs of RoomOnRent team, I really would like to <br> appreciate positive and quick responses
-                        from you guys . <br>Thank you for excellent service through paid plans of <br>RoomOnRent.com."
+                        "RMs of RoomForU team, I really would like to <br> appreciate positive and quick responses
+                        from you guys . <br>Thank you for excellent service through paid plans of <br>RoomForU.com."
                     </span> <br /> <br />
                 </div>
             </div>
         </div>
     </div>
- 
-
-
-
-
-
-
-   
-
- 
-
 
     <!-- footer-->
     <div class="container-foot">
         <div class="container-foot1">
             <div class="con-foot">
-                <h1 class="heding1-t"> 🏠<span class="tex-red">Room On Rent</span></h1><br /> <br>
-                <span class="color-light">room on Rent is India's fastest growing Managed Home <br />
+                <h1 class="heding1-t animate__animated animate__fadeIn"> 🏠
+                    <span class="multicolor-title">
+                        <span>Room</span> <span class="color-lired">For</span> <span>U</span>
+                    </span>
+                </h1>
+                <span class="color-light"><br /> is India's fastest growing Managed Home <br />
                     Rental Network' attempting to provide better rental <br />
                     solutions via design & technology.<br /><br />
-                    We help find,books rental homes of choice across <br />
+                    We help find, book rental homes of choice across <br />
                     Indian cities. We assist with move-in, provide home <br />
-                    maintence service from cleaning, damages to rent <br />
+                    maintenance services from cleaning, damages to rent <br />
                     payment & even move-out.<br /><br />
-                    Whatever be your budget, Whatever you may call a <br />
-                    home (a bed, a room of an entire house), we have<br />
+                    Whatever be your budget, whatever you may call a <br />
+                    home (a bed, a room, or an entire house), we have<br />
                     something for you!
                 </span>
-            </div class="con-foot">
+            </div>
             <div class="con-foot">
-                <h2 class="heding1-t">Rent On Room</h2><br>
+                <h2 class="heding1-t">Room For U</h2><br>
                 <a class="foot-anchor color-light" href="#">our service</a><br>
                 <a class="foot-anchor color-light" href="#">Price Trends</a><br>
                 <a class="foot-anchor color-light" href="#">Post your proprety</a><br>
-                <a class="foot-anchor color-light" href="#">Builders in Maharashtra</a><br>
+                <a class="foot-anchor color-light" href="#">Builders in Madhya Pradesh</a><br>
                 <a class="foot-anchor color-light" href="#">Area Converter</a><br>
                 <a class="foot-anchor color-light" href="#">Articles</a><br>
                 <a class="foot-anchor color-light" href="#">Customer Service</a><br>
@@ -541,23 +851,27 @@
 
             <div class="con-foot">
                 <h2 class="heding1-t"> Contact Us</h2><br />
-                <a class="foot-anchor color-light" href="tel:9373700515">Toll Free-9373700515</a><br />
+                <a class="foot-anchor color-light" href="tel:9981501289">Toll Free - 9981501289</a><br />
 
 
-                <a class="foot-anchor color-light" href="mailto:abhijeetbk154@gmail.com">Email -
-                    roomonrent@gmail.com</a><br /> <br><br>
+                <a class="foot-anchor color-light" href="mailto:agarwalpushpendra6@gmail.com">Email -
+                    RoomForU@gmail.com</a><br> <br><br>
 
                 <h2 class="heding1-t "> Connect With us</h2><br /> <br><br>
 
-                <a href=" "><i class="fa-brands fa-facebook foot-icon"></i></a>
-                <a class="foot-anchor" href=" https://www.youtube.com/channel/UCbKy0fUfvXZlZzyaZ1c7OyQ"><i
-                        class="fa-brands fa-youtube foot-icon"></i></a>
-                <a class="foot-anchor" href="https://www.twitter.com/abhijeetkokat "><i
-                        class="fa-brands fa-twitter foot-icon"></i></a>
-                <a class="foot-anchor" href="https://www.instagram.com/abhijeet_kokat_007/"><i
+                <a href="https://wa.me/message/T3FRUSUBEB2BI1"><i 
+                    class="fa-brands fa-whatsapp foot-icon"></i></a>
+
+                <a class="foot-anchor" href="https://www.youtube.com/channel/UCwptnxBgYblN77IrSgCiCLw"><i 
+                    class="fa-brands fa-youtube foot-icon"></i></a>
+                        
+                <a class="foot-anchor" href="https://x.com/ramnivas_Dangi?t=4WDxdajVl84oFeqAZ-FAuw&s=09"><i
+                        class="fa-brands fa-x-twitter foot-icon"></i></a>
+
+                <a class="foot-anchor" href="https://www.instagram.com/iam_ramnivas?utm_source=qr"><i
                         class="fa-brands fa-instagram foot-icon"></i></a>
-                <a class="foot-anchor"
-                    href=" https://github.com/Abhijeetkokat007/Room-on-Rent-IGCP1-First-group-project"><i
+                        
+                <a class="foot-anchor" href="https://github.com/ramnivas369/Sanketik"><i
                         class="fa-brands fa-github foot-icon"></i></a>
 
 
@@ -565,12 +879,69 @@
 
         </div>
         <div class="fotr-cont">
-            <span class="foot-tex color-light">©2023-2024 <span style="color: #d8232a;">Room-On-Rent</span> Gulab-Group
-                Technology Pvt. Ltd.</span>
+            <span class="foot-tex color-light">©2025-2026 
+                <span class="multicolor-title">
+                    <span>Room</span> <span class="color-lired">For</span> <span>U</span>
+                </span> 
+                Sanketik Pvt. Ltd.
+            </span>
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Room For U</h2>
+                    <p>Find your perfect accommodation with our comprehensive housing solutions. We're dedicated to making your home search experience seamless and worry-free.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./pages/about.html">About Us</a></li>
+                        <li><a href="./pages/service.html">Services</a></li>
+                        <li><a href="#">Properties</a></li>
+                        <li><a href="./pages/userlogin.html">User Login</a></li>
+                        <li><a href="./pages/post_property.html">Owner Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="./pages/service.html">Rental Property Search</a></li>
+                        <li><a href="./pages/service.html">Roommate Matching</a></li>
+                        <li><a href="./pages/service.html">Property Management</a></li>
+                        <li><a href="./pages/service.html">Rental Agreements</a></li>
+                        <li><a href="./pages/service.html">Moving Assistance</a></li>
+                        <li><a href="./pages/service.html">Maintenance Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, City Center, Indore</p>
+                    <p><i class="fas fa-phone"></i> +91 9981501289</p>
+                    <p><i class="fas fa-envelope"></i> info@roomforu.com</p>
+                    <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Room For U. All rights reserved. Designed with <i class="fas fa-heart" style="color: #ff3366;"></i> for a better housing experience.</p>
+            </div>
+        </div>
+    </footer>
+    </div>
 
+    <script src="./js/property-api.js"></script>
+    <script src="./js/room-for-u.js"></script>
 
 </body>
 

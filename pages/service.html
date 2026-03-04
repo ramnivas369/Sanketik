@@ -2,207 +2,761 @@
 <html lang="en">
 
 <head>
-    <title>Service</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/service.css" media="all">
+    <title>Our Services - Room For U</title>
     <script src="https://kit.fontawesome.com/61d1b80f50.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        /* Add service page specific styles */
+        .service-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .service-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .service-title {
+            color: #4254b3;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .service-subtitle {
+            color: #666;
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .service-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .service-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 24px;
+        }
+        
+        .service-card-content {
+            padding: 25px;
+        }
+        
+        .service-card-title {
+            color: #4254b3;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .service-card-desc {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .service-card-link {
+            display: inline-block;
+            color: #4254b3;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .service-card-link:hover {
+            color: #25a9e0;
+        }
+        
+        /* Feature section */
+        .feature-section {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+        
+        .feature-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .feature-title {
+            text-align: center;
+            color: #4254b3;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background-color: #4254b3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+        }
+        
+        .feature-item-title {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .feature-item-desc {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* Testimonial section */
+        .testimonial-section {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+        
+        .testimonial-title {
+            text-align: center;
+            color: #4254b3;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 25px;
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 60px;
+            color: #f0f0f0;
+            font-family: Georgia, serif;
+            z-index: 0;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-text {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 24px;
+        }
+        
+        .testimonial-author-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-author-name {
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .testimonial-author-title {
+            color: #777;
+            font-size: 14px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #4254b3, #8b44ad);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 60px;
+        }
+        
+        .cta-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #4254b3;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Improved Footer Styles */
+        .footer {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 70px 0 20px;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #4254b3, #25a9e0, #8b44ad);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-logo h2 {
+            color: #fff;
+            font-size: 28px;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-logo h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #4254b3, #8b44ad);
+        }
+        
+        .footer-logo p {
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: linear-gradient(135deg, #4254b3, #8b44ad);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h3, .footer-contact h3 {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-links h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: linear-gradient(90deg, #4254b3, #8b44ad);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .footer-links ul li a::before {
+            content: '→';
+            position: absolute;
+            left: -18px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: #fff;
+            transform: translateX(18px);
+        }
+        
+        .footer-links ul li a:hover::before {
+            opacity: 1;
+        }
+        
+        .footer-contact p {
+            color: #ccc;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-contact p i {
+            margin-right: 10px;
+            min-width: 20px;
+            color: #25a9e0;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        .footer-bottom a {
+            color: #25a9e0;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .social-icons {
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* Added for user welcome message */
+        .user-welcome {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .user-dropdown {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            width: 150px;
+            right: 0;
+            top: 100%;
+            z-index: 100;
+        }
+        
+        .user-dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .user-dropdown a:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- ----------------navbar-------------- -->
-    <nav>
-        <h1 class="brand-heading-1">RoomOnRent</h1>
-        <img src="../img/home.png" alt="" class="home-png">
-        <div class="nav-items">
-            <a href="/index.html"><button class="post-btn">Home</button></a>
+    <!-- Header div -->
+    <div class="header-div">
+        <h1 class="brand-heading animate__animated animate__fadeIn">
+            <span class="multicolor-title">
+                <span>Room</span> <span class="color-lired">For</span> <span>U</span>
+            </span>
+        </h1>
+        <span class="btns animate__animated animate__fadeIn">
+            <a href="../index.html" class="login-btn"><span class="user"><b>Home</b></span></a>
+            <a href="about.html" class="login-btn"><span class="user"><b>About</b></span></a>
+            <span id="loginLogoutBtn">
+                <a href="userlogin.html" class="login-btn"><span class="user"><b>User Login</b></span></a>
+            </span>
+            <a href="post_property.html" class="login-btn"><span class="user"><b>Owner Login</b></span></a>
+        </span>
+    </div>
 
-            <a href="./post_property.html"><button class="post-btn">Post Property</button></a>
-            <a href="./userlogin.html"><button class="post-btn">Login here</button></a>
+    <!-- Main content starts here -->
+    <div class="service-container">
+        <div class="service-header">
+            <h1 class="service-title">Our Services</h1>
+            <p class="service-subtitle">Room For U provides comprehensive housing solutions designed to make finding and managing your perfect living space seamless and worry-free.</p>
         </div>
 
-    </nav>
-    <div class="body-structure">
-        <!-- -----------Post property Ad to sell-------------------->
-        <div class="div-header">
-            <div>
-                <h1 class="heading-1">Post property Ad to sell or rent online for <br><span
-                        style="color: green;">Free!</span></h1>
-                <img src="/img/check-mark.png" alt="Check mark" class="check-mark"><span class="check-text">Get Access
-                    to 100 + users</span><br>
-                <img src="/img/check-mark.png" alt="Check mark" class="check-mark"><span class="check-text">Sell Faster
-                    with Premium Service</span><br>
-                <img src="/img/check-mark.png" alt="Check mark" class="check-mark"><span class="check-text">Get Expert
-                    Advice on Market Trends and Insights</span><br>
-            </div>
-
-            <div>
-                <img src="/img/handsome-entrepreneur-sitting-his-desk-with-laptop-pc-typing-mobile-phone-isolated-white.jpg"
-                    alt="" class="service-poster">
-            </div>
-
-        </div>
-        <!-- ---------------------How it works------------------ -->
-        <h1 class="heading">How it works</h1>
-        <div class="how-it-work-main-div">
-            <div>
-                <div class="how-it-work">
-                    <img src="/img/Add color-amico.png" alt="forsale" class="forsale">
-                    <p class="steps-para"><b>Step 1:</b> <br>
-                        <b><span class="step-heading"> Post your Property Ad</span></b> <br><br>
-                        Enter all details like locality name, amenities etc. <br>along with uploading Photos
-                    </p>
-                </div><br>
-                <div class="how-it-work m-2" style="margin-right: 340px;">
-                    <img src="/img/mobiledashboard.png" alt="forsale" class="forsale" style="margin-top: 20px">
-                    <p class="steps-para m-1"><b>Step 2:</b> <br>
-                        <b><span class="step-heading"> Check Responses on Dashboard</span></b> <br><br>
-                        Enter all details like locality name, amenities etc. <br>along with uploading Photos.
-                    </p>
-                    </p>
-                </div><br>
-                <div class="how-it-work">
-                    <img src="/img/deal.png" alt="forsale" class="forsale">
-                    <p class="steps-para"><b>Step 3:</b> <br>
-                        <b><span class="step-heading">Sell/Rent faster with instant Connect</span></b> <br><br>
-                        Negotiate with your prospective Buyer/Tenant & <br>mutually close the deal.
-                    </p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-card-img">
+                    <i class="fas fa-search-location" style="font-size: 48px;"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3 class="service-card-title">Rental Property Search</h3>
+                    <p class="service-card-desc">Find your dream accommodation with our advanced search filters. Browse through verified listings of apartments, houses, and rooms across multiple cities.</p>
+                    <a href="#" class="service-card-link">Learn More →</a>
                 </div>
             </div>
-            <div class="apartment-img">
-                <img src="/img/Apartment rent-bro.png" alt="Apartment rent-bro" class="Apartment-rent-bro">
+
+            <div class="service-card">
+                <div class="service-card-img">
+                    <i class="fas fa-users" style="font-size: 48px;"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3 class="service-card-title">Roommate Matching</h3>
+                    <p class="service-card-desc">Connect with compatible roommates based on lifestyle preferences, schedules, and personal habits to ensure a harmonious living environment.</p>
+                    <a href="#" class="service-card-link">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-img">
+                    <i class="fas fa-building" style="font-size: 48px;"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3 class="service-card-title">Property Management</h3>
+                    <p class="service-card-desc">For property owners, we offer comprehensive management services including tenant screening, rent collection, maintenance coordination, and more.</p>
+                    <a href="#" class="service-card-link">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-img">
+                    <i class="fas fa-file-contract" style="font-size: 48px;"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3 class="service-card-title">Rental Agreements</h3>
+                    <p class="service-card-desc">Get help with legal documentation including lease agreements, security deposits, and other paperwork necessary for a smooth rental process.</p>
+                    <a href="#" class="service-card-link">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-img">
+                    <i class="fas fa-truck" style="font-size: 48px;"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3 class="service-card-title">Moving Assistance</h3>
+                    <p class="service-card-desc">We connect you with reliable moving services to help with packing, transportation, and setup in your new home at competitive rates.</p>
+                    <a href="#" class="service-card-link">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-img">
+                    <i class="fas fa-tools" style="font-size: 48px;"></i>
+                </div>
+                <div class="service-card-content">
+                    <h3 class="service-card-title">Maintenance Support</h3>
+                    <p class="service-card-desc">Get quick access to certified maintenance professionals for any repairs or issues in your rental property through our platform.</p>
+                    <a href="#" class="service-card-link">Learn More →</a>
+                </div>
             </div>
         </div>
-        <!-- --------------Tips on Selling a Property Online---------------------- -->
-
-        <h1 class="heading">Tips on Sell/Rent a Property Online</h1><br>
-        <div class="property-div-1">
-            <div class="sealing-online">
-                <img src="/img/1.png" alt="forsale" class="sealing-icon">
-                <p class="tips-para">
-                    <b><span class="step-heading"> Post your Property Ad</span></b> <br>
-                    Enter all details like locality name, amenities etc. along with uploading Photos
-                </p>
-            </div><br>
-            <div class="sealing-online">
-                <img src="/img/2.png" alt="forsale" class="sealing-icon">
-                <p class="tips-para">
-                    <b><span class="step-heading">Add Quality Photos</span></b> <br>
-                    Do not forget to add high-quality photos as it's key for any property to stand out
-                </p>
-            </div><br>
-        </div>
-        <div class="property-div-2">
-            <div class="sealing-online">
-                <img src="/img/3.png" alt="forsale" class="sealing-icon">
-                <p class="tips-para">
-                    <b><span class="step-heading">Choose Correct Locality/Address</span></b> <br>
-                    Make sure to accurately map your locality while filling in the details of your property. Adding a
-                    correct locality is essential to receive genuine queries for your property.
-                </p>
-            </div><br>
-            <div class="sealing-online">
-                <img src="/img/4.png" alt="forsale" class="sealing-icon">
-                <p class="tips-para">
-                    <b><span class="step-heading">Write Description</span></b> <br>
-                    Provide a short description for your property highlighting the key and all the relevant details
-                    about your property like the type of furnishing, flooring, water supply, etc.
-                </p>
-            </div><br>
-        </div>
-
-        <!-- -----------------Benefits of Selling Your Property Online------------- -->
-        <h1 class="heading">Benefits of Sell/Rent Your Property Online</h1>
-        <img src="/img/check-mark.png" alt="Check mark" class="check-mark"><span
-            class="check-text">Time-Efficient</span><br>
-        <img src="/img/check-mark.png" alt="Check mark" class="check-mark"><span class="check-text">Get Better Exposure
-            To Potential Tenant</span><br>
-        <img src="/img/check-mark.png" alt="Check mark" class="check-mark"><span
-            class="check-text">Cost-Effective</span><br>
-        <img src="/img/check-mark.png" alt="Check mark" class="check-mark"><span class="check-text">No Brokerage
-            Charges</span>
     </div>
 
+    <!-- Feature Section -->
+    <section class="feature-section">
+        <div class="feature-container">
+            <h2 class="feature-title">Why Choose Room For U?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3 class="feature-item-title">No Brokerage Fee</h3>
+                    <p class="feature-item-desc">We connect you directly with property owners, eliminating middlemen and saving you from paying hefty brokerage fees.</p>
+                </div>
 
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-item-title">Verified Listings</h3>
+                    <p class="feature-item-desc">All properties on our platform are verified to ensure you get accurate information and avoid potential scams.</p>
+                </div>
 
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h3 class="feature-item-title">Advanced Filters</h3>
+                    <p class="feature-item-desc">Find exactly what you're looking for with our detailed search filters including budget, location, amenities, and more.</p>
+                </div>
 
-    
-
-     
- 
-    <!-- footer-->
-    <div class="container-foot">
-        <div class="container-foot1">
-            <div class="con-foot">
-                <h1 class="heding1-t"> 🏠<span class="tex-red">Room On Rent</span></h1><br /> <br>
-                <span class="color-light">room on Rent is India's fastest growing Managed Home <br />
-                    Rental Network' attempting to provide better rental <br />
-                    solutions via design & technology.<br /><br />
-                    We help find,books rental homes of choice across <br />
-                    Indian cities. We assist with move-in, provide home <br />
-                    maintence service from cleaning, damages to rent <br />
-                    payment & even move-out.<br /><br />
-                    Whatever be your budget, Whatever you may call a <br />
-                    home (a bed, a room of an entire house), we have<br />
-                    something for you!
-                </span>
-            </div class="con-foot">
-            <div class="con-foot">
-                <h2 class="heding1-t">Rent On Room</h2><br>
-                <a class="foot-anchor color-light" href="#">our service</a><br>
-                <a class="foot-anchor color-light" href="#">Price Trends</a><br>
-                <a class="foot-anchor color-light" href="#">Post your proprety</a><br>
-                <a class="foot-anchor color-light" href="#">Builders in Maharashtra</a><br>
-                <a class="foot-anchor color-light" href="#">Area Converter</a><br>
-                <a class="foot-anchor color-light" href="#">Articles</a><br>
-                <a class="foot-anchor color-light" href="#">Customer Service</a><br>
-                <a class="foot-anchor color-light" href="#">Sitemap</a><br>
-
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-item-title">24/7 Support</h3>
+                    <p class="feature-item-desc">Our customer service team is available round the clock to assist you with any queries or issues.</p>
+                </div>
             </div>
-            <div class="con-foot">
-                <h2 class="heding1-t">Website</h2> <br />
-
-
-                <a class="foot-anchor color-light" href="#"> About us </a><br>
-                <a class="foot-anchor color-light" href="#"> Contact us </a><br>
-                <a class="foot-anchor color-light" href="#"> Terms & Condition </a><br>
-                <a class="foot-anchor color-light" href="#"> Request info </a><br>
-                <a class="foot-anchor color-light" href="#"> Feedback </a><br>
-                <a class="foot-anchor color-light" href="#"> Report a Problem </a><br>
-                <a class="foot-anchor color-light" href="#"> Privacy Policy </a><br>
-                <a class="foot-anchor color-light" href="#"> Grievance </a><br>
-                <a class="foot-anchor color-light" href="#"> Safety Guide </a><br>
-            </div>
-
-            <div class="con-foot">
-                <h2 class="heding1-t"> Contact Us</h2><br />
-                <a class="foot-anchor color-light" href="tel:9373700515">Toll Free-9373700515</a><br />
-
-
-                <a class="foot-anchor color-light" href="mailto:abhijeetbk154@gmail.com">Email -
-                    roomonrent@gmail.com</a><br /> <br><br>
-
-                <h2 class="heding1-t "> Connect With us</h2><br /> <br><br>
-
-                <a href=" "><i class="fa-brands fa-facebook foot-icon"></i></a>
-                <a class="foot-anchor" href=" https://www.youtube.com/channel/UCbKy0fUfvXZlZzyaZ1c7OyQ"><i
-                        class="fa-brands fa-youtube foot-icon"></i></a>
-                <a class="foot-anchor" href="https://www.twitter.com/abhijeetkokat "><i
-                        class="fa-brands fa-twitter foot-icon"></i></a>
-                <a class="foot-anchor" href="https://www.instagram.com/abhijeet_kokat_007/"><i
-                        class="fa-brands fa-instagram foot-icon"></i></a>
-                <a class="foot-anchor"
-                    href=" https://github.com/Abhijeetkokat007/Room-on-Rent-IGCP1-First-group-project"><i
-                        class="fa-brands fa-github foot-icon"></i></a>
-
-
-            </div>
-
         </div>
-        <div class="fotr-cont">
-            <span class="foot-tex color-light">©2023-2024 <span style="color: #d8232a;">Room-On-Rent</span> Gulab-Group
-                Technology Pvt. Ltd.</span>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <h2 class="testimonial-title">What Our Users Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">Room For U helped me find the perfect apartment in just two days! The interface is user-friendly and the verification process gave me peace of mind.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-author-info">
+                            <span class="testimonial-author-name">Priya Sharma</span>
+                            <span class="testimonial-author-title">Student, Delhi University</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">As a property owner, I've had a seamless experience listing my properties on Room For U. The platform connects me with quality tenants without the hassle.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-author-info">
+                            <span class="testimonial-author-name">Rajesh Patel</span>
+                            <span class="testimonial-author-title">Property Owner, Mumbai</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">The roommate matching service is incredible! I found someone with similar interests and schedule. We've been living together for 6 months now without any issues.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-author-info">
+                            <span class="testimonial-author-name">Aditya Nair</span>
+                            <span class="testimonial-author-title">Software Engineer, Bangalore</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2 class="cta-title">Ready to Find Your Perfect Room?</h2>
+        <p class="cta-text">Join thousands of satisfied users who found their ideal living space through Room For U. Start your search today and experience hassle-free accommodation hunting.</p>
+        <a href="userlogin.html" class="cta-button">Get Started Now</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Room For U</h2>
+                    <p>Find your perfect accommodation with our comprehensive housing solutions. We're dedicated to making your home search experience seamless and worry-free.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="#">Properties</a></li>
+                        <li><a href="userlogin.html">User Login</a></li>
+                        <li><a href="post_property.html">Owner Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">Rental Property Search</a></li>
+                        <li><a href="#">Roommate Matching</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Rental Agreements</a></li>
+                        <li><a href="#">Moving Assistance</a></li>
+                        <li><a href="#">Maintenance Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, City Center, Indore</p>
+                    <p><i class="fas fa-phone"></i> +91 9981501289</p>
+                    <p><i class="fas fa-envelope"></i> info@roomforu.com</p>
+                    <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Room For U. All rights reserved. Designed with <i class="fas fa-heart" style="color: #ff3366;"></i> for a better housing experience.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Check if user is logged in and update header
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = JSON.parse(localStorage.getItem('roomForUCurrentUser') || '{}');
+            const loginLogoutBtn = document.getElementById('loginLogoutBtn');
+            
+            if (currentUser && currentUser.name) {
+                // User is logged in, show welcome message
+                loginLogoutBtn.innerHTML = `
+                    <div class="login-btn user-welcome">
+                        <span class="user"><b>Welcome, ${currentUser.name}</b></span>
+                        <div class="user-dropdown">
+                            <a href="#" id="logoutLink">Logout</a>
+                        </div>
+                    </div>
+                `;
+                
+                // Show dropdown on hover
+                const userBtn = loginLogoutBtn.querySelector('.user-welcome');
+                const dropdown = loginLogoutBtn.querySelector('.user-dropdown');
+                
+                userBtn.addEventListener('mouseenter', function() {
+                    dropdown.style.display = 'block';
+                });
+                
+                userBtn.addEventListener('mouseleave', function() {
+                    dropdown.style.display = 'none';
+                });
+                
+                // Logout functionality
+                document.getElementById('logoutLink').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    localStorage.removeItem('roomForUCurrentUser');
+                    window.location.reload();
+                });
+                
+                // Update CTA button
+                const ctaButton = document.querySelector('.cta-button');
+                if (ctaButton) {
+                    ctaButton.textContent = 'Browse Properties';
+                    ctaButton.href = '../index.html';
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -3,217 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Updates</title>
-
-    <link rel="stylesheet" href="/css/updates.css">
-   
+    <title>Latest Updates - Room For U</title>
+    <script src="https://kit.fontawesome.com/61d1b80f50.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./../css/updates.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .main {
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-top: 50px;
+        }
+        .news-main-div {
+            height: auto;
+            min-height: 205px;
+            display: flex;
+            margin: 30px 0;
+            justify-content: space-between;
+            border: #4254b3 solid 1px;
+            box-shadow: 1px 4px 5px 1px rgb(156, 154, 154);
+            transition: all 0.3s ease;
+        }
+        .news-main-div:hover {
+            box-shadow: 2px 4px 10px 2px rgb(112, 109, 109);
+            transform: translateY(-3px);
+        }
+        .home-img-div {
+            height: 205px;
+            overflow: hidden;
+        }
+        .home-img {
+            height: 205px;
+            width: 250px;
+            object-fit: cover;
+        }
+        .heading-para {
+            color: #4254b3;
+        }
+        .details {
+            flex: 1;
+            padding: 15px 20px;
+            position: relative;
+        }
+        .details p {
+            color: #666;
+            line-height: 1.6;
+        }
+        button {
+            background-color: #4254b3;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+            height: 35px;
+            width: 150px;
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: white;
+            color: #4254b3;
+            border: solid 2px #4254b3;
+        }
+        .back {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            z-index: 100;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #4254b3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            color: white;
+        }
+        .brand-heading-1 {
+            font-size: 24px;
+            margin: 0;
+            color: white;
+        }
+        .nav-items {
+            display: flex;
+            gap: 15px;
+        }
+        .post-btn {
+            background-color: white;
+            color: #4254b3;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        /* Footer styles */
+        .container-foot {
+            background-color: #f5f5f5;
+            padding-bottom: 50px;
+            margin-top: 50px;
+        }
+        .container-foot1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: #f5f5f5;
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        .foot-icon {
+            font-size: 30px;
+            margin-left: 10px;
+            color: #4254b3;
+        }
+        .foot-anchor {
+            text-decoration: none;
+            color: #666565;
+        }
+        .color-light {
+            color: #666565;
+        }
+        .tex-red {
+            color: #4254b3;
+        }
+        .con-foot {
+            padding: 50px;
+        }
+        .heding1-t {
+            color: #333;
+        }
+        .fo {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f0f0f0;
+        }
+        .foot-tex {
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            .news-main-div {
+                flex-direction: column;
+                height: auto;
+            }
+            .home-img-div {
+                width: 100%;
+                height: auto;
+            }
+            .home-img {
+                width: 100%;
+                height: auto;
+            }
+            .details {
+                padding-bottom: 60px;
+            }
+            button {
+                bottom: 15px;
+                right: 15px;
+                margin-left: 0;
+            }
+            .con-foot {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <a href="/index.html"><img src="/img/index-page-img/back.png" alt="" class="back"></a>
+    <!-- Navigation -->
+    <nav>
+        <h1 class="brand-heading-1">RoomForU</h1>
+        <div class="nav-items">
+            <a href="/../../index.html"><button class="post-btn">Home</button></a>
+            <a href="./post_property.html"><button class="post-btn">Post Property</button></a>
+            <a href="./userlogin.html"><button class="post-btn">Login</button></a>
+        </div>
+    </nav>
+
     <div class="main">
-    <h1 class="heading-para">Affordable Housing (Letest Updates)</h1>
+        <h1 class="heading-para">Affordable Housing (Latest Updates)</h1>
 
-
-    <div class="news-main-div">
-        <div class="home-img-div">
-            <img src="/img/home-key.jpg" alt="" class="home-img">
+        <div class="news-main-div">
+            <div class="home-img-div">
+                <img src="./../img/home-key.jpg" alt="Housing project" class="home-img">
+            </div>
+            <div class="details">
+                <h2 class="heading-para">Signature Global to invest Rs 310 crore on affordable housing project in Gurugram</h2>
+                <p>The company announced the launch of its new project-Signature Global Imperial spread over 8 acres of land parcel. It is self-funded by the company and is expected to be complete in the next four years.</p>
+                <p>The project will offer 1,141 units, comprising 3 BHK apartments. The price of each unit starts from Rs 75 lakh.</p>
+                <a href="#"><button onclick="alert('Full article coming soon!')">Read More</button></a>
+            </div>
         </div>
-        <div class="details">
-            <h2 class="heading-para">Signature Global to invest Rs 310 crore on affordable housing project in Gurugram</h2>
-            <p>The company announced the launch of its new project-Signature Global Imperial spread over 8 acres of land parcel. It is self-funded by the company and is expected to be complete in the next four years.</p>
-            <a href="/pages/grugram-update.html"><button>Read More</button></a>
+
+        <div class="news-main-div">
+            <div class="home-img-div">
+                <img src="./../img/PMAY.jpg" alt="PMAY Housing" class="home-img">
+            </div>
+            <div class="details">
+                <h2 class="heading-para">Over 60,000 houses approved for construction under Pradhan Mantri Awas Yojana (Urban)</h2>
+                <p>Secretary, MoHUA also discussed the issues pertaining to grounding and construction of houses in different States under different verticals of PMAY(U). He reviewed the pace of completion of houses in the States and directed the officials to expedite the process and meanwhile also evaluate the implementation.</p>
+                <a href="#"><button onclick="alert('Full article coming soon!')">Read More</button></a>
+            </div>
         </div>
 
+        <div class="news-main-div">
+            <div class="home-img-div">
+                <img src="./../img/home3.jpg" alt="New Housing Policy" class="home-img">
+            </div>
+            <div class="details">
+                <h2 class="heading-para">New Housing Policy aims to create 20 million affordable homes by 2025</h2>
+                <p>The government has announced a new housing policy that aims to create 20 million affordable homes by 2025. The policy includes incentives for developers, subsidies for first-time homebuyers, and streamlined approval processes.</p>
+                <p>"This policy is a game-changer for the affordable housing sector," said Housing Minister in a press statement released yesterday.</p>
+                <a href="#"><button onclick="alert('Full article coming soon!')">Read More</button></a>
+            </div>
+        </div>
+
+        <div class="news-main-div">
+            <div class="home-img-div">
+                <img src="./../img/home4.jpg" alt="Real Estate Investment" class="home-img">
+            </div>
+            <div class="details">
+                <h2 class="heading-para">Real Estate Investment Trusts (REITs) show strong growth in residential sector</h2>
+                <p>Real Estate Investment Trusts focusing on residential properties have shown remarkable growth in the last quarter, with returns averaging 12.3% annually. This outperforms commercial REITs for the third consecutive quarter.</p>
+                <p>Analysts attribute this growth to increasing demand for rental housing in major metropolitan areas and favorable interest rates.</p>
+                <a href="#"><button onclick="alert('Full article coming soon!')">Read More</button></a>
+            </div>
+        </div>
     </div>
 
-
-
-    <div class="news-main-div">
-        <div class="home-img-div">
-            <img src="/img/PMAY.jpg" alt="" class="home-img">
-        </div>
-        <div class="details">
-            <h2 class="heading-para">Over 60,000 houses approved for construction under Pradhan Mantri Awas Yojana (Urban)</h2>
-            <p>Secretary, MoHUA also discussed the issues pertaining to grounding and construction of houses in different States under different verticals of PMAY(U). He reviewed the pace of completion of houses in the States and directed the officials to expedite the process and meanwhile also evaluate the...</p>
-           <a href="/pages/avas-yojana.html"> <button>Read More</button></a>
-        </div>
-
-    </div>
-
-
-    <div class="news-main-div">
-        <div class="home-img-div">
-            <img src="/img/home-money5.jpg" alt="" class="home-img">
-        </div>
-        <div class="details">
-            <h2 class="heading-para">Shriram Housing loan-book grows 45% to cross Rs 5,000-crore so far this fiscal</h2>
-            <p>Had it not been for the third wave and the resultant curbs on our operations, which impacted collections, the AUM would have already crossed the Rs 5000-crore-mark in December as planned. This also will impact the annual target of Rs 5,500 crore of live loans, and we should now be closing the year.</p>
-            <a href="/pages/shreeram-housing.html"><button>Read More</button></a>
-        </div>
-
-    </div>
-
-
-
-    <div class="news-main-div">
-        <div class="home-img-div">
-            <img src="/img/home-sales.jpg" alt="" class="home-img">
-        </div>
-        <div class="details">
-            <h2 class="heading-para">Planet Smart City plans to raise 60 million euros to expand business in India, other countries</h2>
-            <p>The 60m capital increase is aimed at accelerating the implementation of Planet's ambitious business plan that includes the launch of approximately 54 smart projects over the next three years (a total of over 40,000 housing units)," the statement said.</p>
-           <a href="/pages/planet-city.html"> <button>Read More</button></a>
-        </div>
-
-    </div>
-
-
-
-
-    <div class="news-main-div">
-        <div class="home-img-div">
-            <img src="/img/home-family-hand.jpg" alt="" class="home-img">
-        </div>
-        <div class="details">
-            <h2 class="heading-para">Government push for affordable housing scheme in Rajasthan
-            </h2>
-            <p>The decision was taken after the pace to construct affordable houses including Economic Weaker Section (EWS) and Lower Income Group (LIG) slowed down due to existing policies, which became a hindrance in achieving a target of 4,200 houses.</p>
-            <button>Read More</button>
-        </div>
-
-    </div>
-
-
-
-    
-    <div class="news-main-div">
-        <div class="home-img-div">
-            <img src="/img/home12.jpg" alt="" class="home-img">
-        </div>
-        <div class="details">
-            <h2 class="heading-para">Provide housing facility to urban poor: Bihar CM</h2>
-            <p>Nitish, who reviewed the work being done by the UDHD, said the scheme for the provision of housing facilities to the homeless urban poor was part of the Bihar Atmanirbhar vision that underlined the Saat Nischchay-II programme of the government.</p>
-            <button>Read More</button>
-        </div>
-
-    </div>
-
-
-
-
-
-    
-    <div class="news-main-div">
-        <div class="home-img-div">
-            <img src="/img/home10.jpg" alt="" class="home-img">
-        </div>
-        <div class="details">
-            <h2 class="heading-para">IIFL Home Finance to get $68 million ADB loans</h2>
-            <p>The funding comprises a direct ADB loan of $58 million and another $10 million concessional loan from the Canadian Climate Fund. The Canadian fund will also be routed through ADB.</p>
-            <button>Read More</button>
-        </div>
-
-    </div>
-
-
-    
-    <div class="news-main-div">
-        <div class="home-img-div">
-            <img src="/img/Y-Jaganmohan-Reddy.png" alt="" class="home-img">
-        </div>
-        <div class="details">
-            <h2 class="heading-para">House plots at affordable prices for middle class in Andhra Pradesh, says CM</h2>
-            <p>The chief minister inaugurated the website to kick-start the sale of plots in Jagananna Smart Townships in six districts on January 11.</p>
-            <button>Read More</button>
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-    
-</div> 
-
-
-    <!-- footer-->
+    <!-- Footer -->
     <div class="container-foot">
         <div class="container-foot1">
             <div class="con-foot">
-                <h1 class="heding1-t"> 🏠<span class="tex-red">Room On Rent</span></h1><br /> <br>
-                <span class="color-light">room on Rent is India's fastest growing Managed Home <br />
-                    Rental Network' attempting to provide better rental <br />
-                    solutions via design & technology.<br /><br />
-                    We help find,books rental homes of choice across <br />
-                    Indian cities. We assist with move-in, provide home <br />
-                    maintence service from cleaning, damages to rent <br />
-                    payment & even move-out.<br /><br />
-                    Whatever be your budget, Whatever you may call a <br />
-                    home (a bed, a room of an entire house), we have<br />
+                <h1 class="heding1-t">🏠<span class="tex-red">Roon For You</span></h1><br/>
+                <span class="color-light">Roon For You is India's fastest growing Managed Home<br/>
+                    Rental Network' attempting to provide better rental<br/>
+                    solutions via design & technology.<br/><br/>
+                    We help find, book rental homes of choice across<br/>
+                    Indian cities. We assist with move-in, provide home<br/>
+                    maintenance service from cleaning, damages to rent<br/>
+                    payment & even move-out.<br/><br/>
+                    Whatever be your budget, Whatever you may call a<br/>
+                    home (a bed, a room of an entire house), we have<br/>
                     something for you!
                 </span>
-            </div class="con-foot">
+            </div>
             <div class="con-foot">
                 <h2 class="heding1-t">Rent On Room</h2><br>
-                <a class="foot-anchor color-light" href="#">our service</a><br>
+                <a class="foot-anchor color-light" href="../pages/service.html">Our Services</a><br>
                 <a class="foot-anchor color-light" href="#">Price Trends</a><br>
-                <a class="foot-anchor color-light" href="#">Post your proprety</a><br>
+                <a class="foot-anchor color-light" href="../pages/post_property.html">Post your property</a><br>
                 <a class="foot-anchor color-light" href="#">Builders in Maharashtra</a><br>
                 <a class="foot-anchor color-light" href="#">Area Converter</a><br>
                 <a class="foot-anchor color-light" href="#">Articles</a><br>
                 <a class="foot-anchor color-light" href="#">Customer Service</a><br>
                 <a class="foot-anchor color-light" href="#">Sitemap</a><br>
-
             </div>
             <div class="con-foot">
-                <h2 class="heding1-t">Website</h2> <br />
-
-
-                <a class="foot-anchor color-light" href="#"> About us </a><br>
-                <a class="foot-anchor color-light" href="#"> Contact us </a><br>
-                <a class="foot-anchor color-light" href="#"> Terms & Condition </a><br>
-                <a class="foot-anchor color-light" href="#"> Request info </a><br>
-                <a class="foot-anchor color-light" href="#"> Feedback </a><br>
-                <a class="foot-anchor color-light" href="#"> Report a Problem </a><br>
-                <a class="foot-anchor color-light" href="#"> Privacy Policy </a><br>
-                <a class="foot-anchor color-light" href="#"> Grievance </a><br>
-                <a class="foot-anchor color-light" href="#"> Safety Guide </a><br>
+                <h2 class="heding1-t">Website</h2><br/>
+                <a class="foot-anchor color-light" href="../pages/about.html">About us</a><br>
+                <a class="foot-anchor color-light" href="#">Contact us</a><br>
+                <a class="foot-anchor color-light" href="#">Terms & Condition</a><br>
+                <a class="foot-anchor color-light" href="#">Request info</a><br>
+                <a class="foot-anchor color-light" href="#">Feedback</a><br>
+                <a class="foot-anchor color-light" href="#">Report a Problem</a><br>
+                <a class="foot-anchor color-light" href="#">Privacy Policy</a><br>
+                <a class="foot-anchor color-light" href="#">Grievance</a><br>
+                <a class="foot-anchor color-light" href="#">Safety Guide</a><br>
             </div>
-
             <div class="con-foot">
-                <h2 class="heding1-t"> Contact Us</h2><br />
-                <a class="foot-anchor color-light" href="tel:9373700515">Toll Free-9373700515</a><br />
-
-
-                <a class="foot-anchor color-light" href="mailto:abhijeetbk154@gmail.com">Email -
-                    roomonrent@gmail.com</a><br /> <br><br>
-
-                <h2 class="heding1-t "> Connect With us</h2><br /> <br><br>
-
-                <a href=" "><i class="fa-brands fa-facebook foot-icon"></i></a>
-                <a class="foot-anchor" href=" https://www.youtube.com/channel/UCbKy0fUfvXZlZzyaZ1c7OyQ"><i
-                        class="fa-brands fa-youtube foot-icon"></i></a>
-                <a class="foot-anchor" href="https://www.twitter.com/abhijeetkokat "><i
-                        class="fa-brands fa-twitter foot-icon"></i></a>
-                <a class="foot-anchor" href="https://www.instagram.com/abhijeet_kokat_007/"><i
-                        class="fa-brands fa-instagram foot-icon"></i></a>
-                <a class="foot-anchor"
-                    href=" https://github.com/Abhijeetkokat007/Room-on-Rent-IGCP1-First-group-project"><i
-                        class="fa-brands fa-github foot-icon"></i></a>
-
-
+                <h2 class="heding1-t">Contact Us</h2><br/>
+                <a class="foot-anchor color-light" href="tel:9373700515">Toll Free-9373700515</a><br/>
+                <a class="foot-anchor color-light" href="mailto:abhijeetbk154@gmail.com">Email - RoomForU@gmail.com</a><br/><br><br>
+                <h2 class="heding1-t">Connect With us</h2><br/>
+                <a href="#"><i class="fa-brands fa-facebook foot-icon"></i></a>
+                <a class="foot-anchor" href="#"><i class="fa-brands fa-youtube foot-icon"></i></a>
+                <a class="foot-anchor" href="#"><i class="fa-brands fa-twitter foot-icon"></i></a>
+                <a class="foot-anchor" href="#"><i class="fa-brands fa-instagram foot-icon"></i></a>
             </div>
-
         </div>
-        <div class="fotr-cont">
-            <span class="foot-tex color-light">©2023-2024 <span style="color: #d8232a;">Room-On-Rent</span> Gulab-Group
-                Technology Pvt. Ltd.</span>
+        <div class="fo">
+            <span class="foot-tex color-light">©2025-26 <span style="color: #4254b3;">Room For U</span> Sanketik Pvt. Ltd.</span>
         </div>
     </div>
 
-
+    <script>
+        // Add click event to Read More buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (!this.onclick) {
+                    alert('Full article coming soon!');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

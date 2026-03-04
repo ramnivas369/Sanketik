@@ -5,21 +5,275 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About us</title>
     <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        /* Multicolor Room For U Animation */
+        .multicolor-title {
+          display: inline-block;
+          font-weight: bold;
+          position: relative;
+        }
+        
+        .multicolor-title span:nth-child(1) {
+          color: #4254b3;
+          animation: color-rotate-1 3s linear infinite;
+        }
+        
+        .multicolor-title span:nth-child(2) {
+          color: #25a9e0;
+          animation: color-rotate-2 3s linear infinite;
+        }
+        
+        .multicolor-title span:nth-child(3) {
+          color: #8b44ad;
+          animation: color-rotate-3 3s linear infinite;
+        }
+        
+        @keyframes color-rotate-1 {
+          0% { color: #4254b3; }
+          33% { color: #25a9e0; }
+          66% { color: #8b44ad; }
+          100% { color: #4254b3; }
+        }
+        
+        @keyframes color-rotate-2 {
+          0% { color: #25a9e0; }
+          33% { color: #8b44ad; }
+          66% { color: #4254b3; }
+          100% { color: #25a9e0; }
+        }
+        
+        @keyframes color-rotate-3 {
+          0% { color: #8b44ad; }
+          33% { color: #4254b3; }
+          66% { color: #25a9e0; }
+          100% { color: #8b44ad; }
+        }
+        
+        .brand-heading-1 {
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .color-lired {
+          position: relative;
+          display: inline-block;
+          color: #8b44ad;
+          animation: color-change 4s linear infinite;
+        }
+        
+        @keyframes color-change {
+          0% { color: #4254b3; }
+          25% { color: #25a9e0; }
+          50% { color: #8b44ad; }
+          75% { color: #ff3988; }
+          100% { color: #4254b3; }
+        }
+        
+        /* Footer multicolor styling */
+        .tex-red {
+          background: linear-gradient(90deg, #4254b3, #25a9e0, #8b44ad, #ff3988);
+          background-size: 300% 100%;
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+          animation: gradient-shift 4s ease infinite;
+        }
+        
+        @keyframes gradient-shift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+
+        /* Improved Footer Styles */
+        .footer {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 70px 0 20px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #4254b3, #25a9e0, #8b44ad);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo h2 {
+            color: #fff;
+            font-size: 28px;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-logo h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #4254b3, #8b44ad);
+        }
+
+        .footer-logo p {
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: linear-gradient(135deg, #4254b3, #8b44ad);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-links h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: linear-gradient(90deg, #4254b3, #8b44ad);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+        }
+
+        .footer-links ul li a::before {
+            content: '→';
+            position: absolute;
+            left: -18px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: #fff;
+            transform: translateX(18px);
+        }
+
+        .footer-links ul li a:hover::before {
+            opacity: 1;
+        }
+
+        .footer-contact p {
+            color: #ccc;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact p i {
+            margin-right: 10px;
+            min-width: 20px;
+            color: #25a9e0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .footer-bottom a {
+            color: #25a9e0;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .social-icons {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
     
     <!-- ----------------navbar-------------- -->
     <nav>
-        <h1 class="brand-heading-1">RoomOnRent</h1>
-        <img src="../img/home.png" alt="" class="home-png">
-        <div class="nav-items">
-            <a href="/index.html"><button class="post-btn">Home</button></a>
-
-            <a href="./post_property.html"><button class="post-btn">Post Property</button></a>
-            <a href="./userlogin.html"><button class="post-btn">Login here</button></a>
+        <div class="header-div">
+            <h1 class="brand-heading animate__animated animate__fadeIn">
+                <span class="multicolor-title">
+                    <span>Room</span> <span class="color-lired">For</span> <span>U</span>
+                </span>
+            </h1>
+            <span class="btns animate__animated animate__fadeIn">
+                <a href="../index.html" class="login-btn"><span class="user"><b>Home</b></span></a>
+                <a href="service.html" class="login-btn"><span class="user"><b>Services</b></span></a>
+                <span id="loginLogoutBtn">
+                    <a href="userlogin.html" class="login-btn"><span class="user"><b>User Login</b></span></a>
+                </span>
+                <a href="post_property.html" class="login-btn"><span class="user"><b>Owner Login</b></span></a>
+            </span>
         </div>
-
     </nav>
      <!-- <h1 class="header">About Page</h1> -->
 
@@ -27,10 +281,14 @@
     <div class="container">
      <h1 class="welcm"> Welcome To Our Website</h1>
      
-  <p>room on Rent  is India's fastest growing Managed Home <br/>
+  <p> <span class="color-lired">
+        <span class="multicolor-title">
+            <span>Room</span> <span class="color-lired">For</span> <span>U</span>
+        </span>!
+     </span> is India's fastest growing Managed Home <br/>
     Rental Network' attempting to provide better rental <br/>
     solutions via design & technology.<br/><br/>
-   We help find,books rental homes of choice across <br/>
+   We help find, books rental homes of choice across <br/>
  Indian cities. We assist with move-in, provide home  <br/>
  maintence service from cleaning, damages to rent <br/>
  payment & even move-out.<br/><br/>
@@ -64,36 +322,36 @@
   
 <div class="card1">
 <div class="div-colo"></div>
-<img src="/img/abhijit.jpg" alt="harsh jpg" class="img-card">
-<h2 class="name">Abhijeet kokat</h2>
-<p class="info">I am <span class="hi-name"> Abhijeet Kokat</span>, currently pursuing in 3rd year CSE from parikrama college of engineering kashti</p>
+<img src="../img/RD.jpg" alt="harsh jpg" class="img-card">
+<h2 class="name">Ramnivas Dangi</h2>
+<p class="info">I am <span class="hi-name">Ramnivas Dangi</span>, a 2nd-year CSE student at IIST Indore, passionate about tech, innovation, and making an impact.</p>
 <div class="icon">
-    <a href="https://github.com/abhijeetkokat007"><img src="/img/github.png" alt="" class="social-icon"></a>&nbsp; &nbsp; 
-    <a href="https://linkedin.com/in/abhijeetkokat007"><img src="/img/linkedin.png" alt="" class="social-icon"></a>
+    <a href="https://github.com/ramnivas369/Sanketik"><img src="../img/github.png" alt="" class="social-icon"></a>&nbsp; &nbsp; 
+    <a href="https://www.linkedin.com/in/ramnivas-dangi-561091291"><img src="../img/linkedin.png" alt="" class="social-icon"></a>
   
 </div>
 
 </div>
 <div class="card1">
   <div class="div-colo"></div>
-  <img src="/img/harsh.jpeg" alt="harsh jpg" class="img-card">
-  <h2 class="name">Harshvardhan Khairnar</h2>
-  <p class="info">I am <span class="hi-name"> Harshvardhan Khairnar</span>, currently pursuing completed B.Com from D.J Malpani commerce and B.N sarda Science college, Sangamner </p>
+  <img src="../img/index-page-img/Ranu.jpg" alt="harsh jpg" class="img-card">
+  <h2 class="name">Ranu Mistri</h2>
+  <p class="info">I am <span class="hi-name">Ranu Mistri</span>, a 2nd-year CSE student at IIST Indore, passionate about tech and innovation 🚀.</p>
   <div class="icon">
-    <a href="https://github.com/Harshvardhan-Kh"><img src="/img/github.png" alt="" class="social-icon"></a>&nbsp; &nbsp; 
-    <a href="https://linkedin.com/in/harshvardhan-khairnar-016aa4273"><img src="/img/linkedin.png" alt="" class="social-icon"></a>
+    <a href="https://github.com/student453"><img src="../img/github.png" alt="" class="social-icon"></a>&nbsp; &nbsp; 
+    <a href="https://www.linkedin.com/in/ranu-mistri-748682313"><img src="../img/linkedin.png" alt="" class="social-icon"></a>
   
 </div>
 
   </div>
   <div class="card1">
     <div class="div-colo"></div>
-    <img src="/img/datta.jpg" alt="harsh jpg" class="img-card">
-    <h2 class="name">Dattatray Tupe</h2>
-    <p class="info">I am <span class="hi-name">Dattatray Tupe</span>, currently pursuing completed BCA from Rajashree shahu mahavidyalay deolali pravara</p>
+    <img src="../img/index-page-img/Prince.jpg" alt="harsh jpg" class="img-card">
+    <h2 class="name">Prince Jatav</h2>
+    <p class="info">I am <span class="hi-name">Prince Jatav</span>, a 2nd-year CSE student at IIST Indore, exploring technology and its endless possibilities.</p>
     <div class="icon">
-        <a href="https://github.com/datta88"><img src="/img/github.png" alt="" class="social-icon"></a>&nbsp; &nbsp; 
-        <a href="www.linkedin.com/in/dattatray-tupe-625547262"><img src="/img/linkedin.png" alt="" class="social-icon"></a>
+        <a href="https://github.com/princejatav18"><img src="../img/github.png" alt="" class="social-icon"></a>&nbsp; &nbsp; 
+        <a href="https://www.linkedin.com/in/prince-jatav-23b3b9331"><img src="../img/linkedin.png" alt="" class="social-icon"></a>
       
     </div>
    
@@ -106,25 +364,25 @@
 
   <div class="card1">
     <div class="div-colo"></div>
-    <img src="/img/bandini.jpeg" alt="harsh jpg" class="img-card">
-    <h2 class="name">Bandini Kohare</h2>
-    <p class="info">I am <span class="hi-name">Bandini Kohare</span>, currently pursuing in 3rd year CSE from parikrama college of engineering kashti</p>
+    <img src="../img/index-page-img/Nikhil.jpg" alt="harsh jpg" class="img-card">
+    <h2 class="name">Nikhil Likhitkar</h2>
+    <p class="info">I am <span class="hi-name">Nikhil Likhitkar</span>, a 2nd-year CSE student at IIST Indore, passionate about coding and innovation.</p>
     <p></p>
     <div class="icon">
-        <a href="https://github.com/BandiniKohare2001"><img src="/img/github.png" alt="" class="social-icon"></a>&nbsp; &nbsp; 
-        <a href="https://www.linkedin.com/in/BandiniKohare2001"><img src="/img/linkedin.png" alt="" class="social-icon"></a>
+        <a href="https://github.com/NK-08-01"><img src="../img/github.png" alt="" class="social-icon"></a>&nbsp; &nbsp; 
+        <a href="https://www.linkedin.com/in/nikhil-likhitkar-3533a62b5"><img src="../img/linkedin.png" alt="" class="social-icon"></a>
       
     </div>
     </div>
 
     <div class="card1">
       <div class="div-colo"></div>
-      <img src="./../img/shital1.jpeg" class="img-card"/> 
-      <h2 class="name">Shital  Warkhade</h2>
-      <p class="info">I am <span class="hi-name"> Shital  Warkhade</span>, currently pursuing completed BCA from Rajashree shahu mahavidyalay deolali pravara</p>
+      <img src="../img/index-page-img/Nancy.jpg" class="img-card"/> 
+      <h2 class="name">Nancy Sahu</h2>
+      <p class="info">I am <span class="hi-name">Nancy Sahu</span>, a 2nd-year CSE student at IIST Indore, curious about technology and its impact on the world.</p>
       <div class="icon">
-        <a href="https://github.com/shitalwarkhade89"><img src="/img/github.png" alt="" class="social-icon"></a>&nbsp; &nbsp; 
-        <a href="https://www.linkedin.com/in/shitalwarkhade89/"><img src="/img/linkedin.png" alt="" class="social-icon"></a>
+        <a href="https://github.com/NANCYSAHU30"><img src="../img/github.png" alt="" class="social-icon"></a>&nbsp; &nbsp; 
+        <a href="https://www.linkedin.com/in/nancy-sahu-ba1ab62b8"><img src="../img/linkedin.png" alt="" class="social-icon"></a>
       
     </div>
      
@@ -137,82 +395,95 @@
 
 
 
-    <!-- footer-->
-    <div class="container-foot">
-      <div class="container-foot1">
-          <div class="con-foot">
-              <h1 class="heding1-t"> 🏠<span class="tex-red">Room On Rent</span></h1><br /> <br>
-              <span class="color-light">room on Rent is India's fastest growing Managed Home <br />
-                  Rental Network' attempting to provide better rental <br />
-                  solutions via design & technology.<br /><br />
-                  We help find,books rental homes of choice across <br />
-                  Indian cities. We assist with move-in, provide home <br />
-                  maintence service from cleaning, damages to rent <br />
-                  payment & even move-out.<br /><br />
-                  Whatever be your budget, Whatever you may call a <br />
-                  home (a bed, a room of an entire house), we have<br />
-                  something for you!
-              </span>
-          </div class="con-foot">
-          <div class="con-foot">
-              <h2 class="heding1-t">Rent On Room</h2><br>
-              <a class="foot-anchor color-light" href="#">our service</a><br>
-              <a class="foot-anchor color-light" href="#">Price Trends</a><br>
-              <a class="foot-anchor color-light" href="#">Post your proprety</a><br>
-              <a class="foot-anchor color-light" href="#">Builders in Maharashtra</a><br>
-              <a class="foot-anchor color-light" href="#">Area Converter</a><br>
-              <a class="foot-anchor color-light" href="#">Articles</a><br>
-              <a class="foot-anchor color-light" href="#">Customer Service</a><br>
-              <a class="foot-anchor color-light" href="#">Sitemap</a><br>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Room For U</h2>
+                    <p>Find your perfect accommodation with our comprehensive housing solutions. We're dedicated to making your home search experience seamless and worry-free.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="#">Properties</a></li>
+                        <li><a href="userlogin.html">User Login</a></li>
+                        <li><a href="post_property.html">Owner Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="service.html">Rental Property Search</a></li>
+                        <li><a href="service.html">Roommate Matching</a></li>
+                        <li><a href="service.html">Property Management</a></li>
+                        <li><a href="service.html">Rental Agreements</a></li>
+                        <li><a href="service.html">Moving Assistance</a></li>
+                        <li><a href="service.html">Maintenance Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, City Center, Indore</p>
+                    <p><i class="fas fa-phone"></i> +91 9981501289</p>
+                    <p><i class="fas fa-envelope"></i> info@roomforu.com</p>
+                    <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Room For U. All rights reserved. Designed with <i class="fas fa-heart" style="color: #ff3366;"></i> for a better housing experience.</p>
+            </div>
+        </div>
+    </footer>
 
-          </div>
-          <div class="con-foot">
-              <h2 class="heding1-t">Website</h2> <br />
-
-
-              <a class="foot-anchor color-light" href="#"> About us </a><br>
-              <a class="foot-anchor color-light" href="#"> Contact us </a><br>
-              <a class="foot-anchor color-light" href="#"> Terms & Condition </a><br>
-              <a class="foot-anchor color-light" href="#"> Request info </a><br>
-              <a class="foot-anchor color-light" href="#"> Feedback </a><br>
-              <a class="foot-anchor color-light" href="#"> Report a Problem </a><br>
-              <a class="foot-anchor color-light" href="#"> Privacy Policy </a><br>
-              <a class="foot-anchor color-light" href="#"> Grievance </a><br>
-              <a class="foot-anchor color-light" href="#"> Safety Guide </a><br>
-          </div>
-
-          <div class="con-foot">
-              <h2 class="heding1-t"> Contact Us</h2><br />
-              <a class="foot-anchor color-light" href="tel:9373700515">Toll Free-9373700515</a><br />
-
-
-              <a class="foot-anchor color-light" href="mailto:abhijeetbk154@gmail.com">Email -
-                  roomonrent@gmail.com</a><br /> <br><br>
-
-              <h2 class="heding1-t "> Connect With us</h2><br /> <br><br>
-
-              <a href=" "><i class="fa-brands fa-facebook foot-icon"></i></a>
-              <a class="foot-anchor" href=" https://www.youtube.com/channel/UCbKy0fUfvXZlZzyaZ1c7OyQ"><i
-                      class="fa-brands fa-youtube foot-icon"></i></a>
-              <a class="foot-anchor" href="https://www.twitter.com/abhijeetkokat "><i
-                      class="fa-brands fa-twitter foot-icon"></i></a>
-              <a class="foot-anchor" href="https://www.instagram.com/abhijeet_kokat_007/"><i
-                      class="fa-brands fa-instagram foot-icon"></i></a>
-              <a class="foot-anchor"
-                  href=" https://github.com/Abhijeetkokat007/Room-on-Rent-IGCP1-First-group-project"><i
-                      class="fa-brands fa-github foot-icon"></i></a>
-
-
-          </div>
-
-      </div>
-      <div class="fotr-cont">
-          <span class="foot-tex color-light">©2023-2024 <span style="color: #d8232a;">Room-On-Rent</span> Gulab-Group
-              Technology Pvt. Ltd.</span>
-      </div>
-  </div>
-
-
+<script>
+    // Check if user is logged in and update header
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentUser = JSON.parse(localStorage.getItem('roomForUCurrentUser') || '{}');
+        const loginLogoutBtn = document.getElementById('loginLogoutBtn');
+        
+        if (currentUser && currentUser.name) {
+            // User is logged in, show welcome message
+            loginLogoutBtn.innerHTML = `
+                <div class="login-btn" style="position: relative;">
+                    <span class="user"><b>Welcome, ${currentUser.name}</b></span>
+                    <div class="user-dropdown" style="display: none; position: absolute; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); border-radius: 5px; width: 150px; right: 0; top: 100%; z-index: 100;">
+                        <a href="#" id="logoutLink" style="display: block; padding: 10px; text-decoration: none; color: #333;">Logout</a>
+                    </div>
+                </div>
+            `;
+            
+            // Show dropdown on hover
+            const userBtn = loginLogoutBtn.querySelector('.login-btn');
+            const dropdown = loginLogoutBtn.querySelector('.user-dropdown');
+            
+            userBtn.addEventListener('mouseenter', function() {
+                dropdown.style.display = 'block';
+            });
+            
+            userBtn.addEventListener('mouseleave', function() {
+                dropdown.style.display = 'none';
+            });
+            
+            // Logout functionality
+            document.getElementById('logoutLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                localStorage.removeItem('roomForUCurrentUser');
+                window.location.reload();
+            });
+        }
+    });
+</script>
 
 </body>
 </html>
